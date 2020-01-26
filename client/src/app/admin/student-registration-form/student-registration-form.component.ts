@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { StudentAuthService } from '../studentAuthService/student-auth.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StudentService } from '../service/student.service';
 
 @Component({
-  selector: 'app-student-registration',
-  templateUrl: './student-registration.component.html',
-  styleUrls: ['./student-registration.component.css']
+  selector: 'app-student-registration-form',
+  templateUrl: './student-registration-form.component.html',
+  styleUrls: ['./student-registration-form.component.css']
 })
-export class StudentRegistrationComponent implements OnInit {
+export class StudentRegistrationFormComponent implements OnInit {
   registerForm: FormGroup;
   isRegisterFailed = false;
   constructor(
     private fb: FormBuilder,
-    private studentService: StudentAuthService,
+    private studentService: StudentService,
     private router: Router
   ) { }
 

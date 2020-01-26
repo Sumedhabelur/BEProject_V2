@@ -10,8 +10,4 @@ export class StudentAuthService {
   loginStudent(data) {
     return this.http.post('http://localhost:3000/student/login', data);
   }
-
-  registerStudent(data) {
-    return this.http.post('http://localhost:3000/student/register', data);
-  }
 }
