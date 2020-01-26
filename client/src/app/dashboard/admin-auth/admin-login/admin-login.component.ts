@@ -24,8 +24,8 @@ export class AdminLoginComponent implements OnInit {
 
   buildForm() {
     this.adminForm = this.fb.group({
-      userName: ['', Validators.required],
-      pass: ['', Validators.required]
+      userName: ['kseadmin', Validators.required],
+      pass: ['keystone', Validators.required]
     });
   }
 

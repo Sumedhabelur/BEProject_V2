@@ -23,13 +23,13 @@ export class StudentRegistrationComponent implements OnInit {
 
 buildForm() {
   this.registerForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
-    email: ['', Validators.required],
-    class: ['', Validators.required],
-    dob: ['', Validators.required],
-    typeOfAdmission: ['', Validators.required],
-    dept: ['', Validators.required]
+    firstName: ['test', Validators.required],
+    lastName: ['test', Validators.required],
+    email: ['7276279026.pk@gmail.com', Validators.required],
+    class: ['SE', Validators.required],
+    dob: ['1997-12-28', Validators.required],
+    typeOfAdmission: ['DSE', Validators.required],
+    dept: ['COMP', Validators.required]
   });
 }
 

@@ -44,36 +44,35 @@ exports.registerStudent = async (req, res, next) => {
     });
     student
         .save()
-        res.status(200).json(result);
-        // .then((result) => {
-        //     var transporter = nodemailer.createTransport({
-        //         service: 'gmail',
-        //         auth: {
-        //             user: '',
-        //             pass: ''
-        //         }
-        //     });
-        //     var mailOptions = {
-        //         from: '',
-        //         to: '',
-        //         subject: 'Hi SID',
-        //         text: 'http://localhost:4200/student'
-        //     };
-        //     transporter.sendMail(mailOptions, function (error, info) {
-        //         if (error) {
-        //             console.log(error);
-        //         } else {
-        //             console.log('Email sent: ' + info.response);
-        //             res.status(201).json({
-        //                 res: 'Email Sent',
-        //                 result: result
-        //             });
-        //         }
-        //     });
-        // })
-        // .catch((error) => {
-        //     console.log('error', error)
-        // });
+        .then((result) => {
+            var transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.MAILID,
+                    pass: process.env.MAILPASS
+                }
+            });
+            var mailOptions = {
+                from: process.env.MAILID,
+                to: req.body.email,
+                subject: 'Hi SID',
+                text: 'http://localhost:4200/student'
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                    res.status(201).json({
+                        res: 'Email Sent',
+                        result: result
+                    });
+                }
+            });
+        })
+        .catch((error) => {
+            console.log('error', error)
+        });
 
 
 
