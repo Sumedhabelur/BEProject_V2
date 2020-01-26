@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  selectedType: any;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectAuthType(type: any) {
+    this.selectedType = type;
   }
 
 }

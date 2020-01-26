@@ -8,9 +8,9 @@ export class StudentService {
 
   constructor(private http: HttpClient) {}
 
-  loginStudent(data) {
-    return this.http.post('http://localhost:3000/student/login', data);
-  }
+  // loginStudent(data) {
+  //   return this.http.post('http://localhost:3000/student/login', data);
+  // }
 
   registerStudent(data) {
     return this.http.post('http://localhost:3000/student/register', data);

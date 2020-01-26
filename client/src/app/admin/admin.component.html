@@ -1,36 +1,26 @@
 <div class="background">
-  <div>
-    <div class="row">
-      <div class="sidebar" style="margin-top: 261px;">
-        <a class="nav-button"><i class="fa fa-fw fa-home"></i>Professor Registration</a>
-        <a class="nav-button"><i class="fa fa-fw fa-home"></i>Student Registration</a>
+  <div class="row">
+    <img src="../../assets/images/boy.jpg" class="profile">
+    <div class="column">
+      <div class="col heading">
+        Welcome Admin..!!
       </div>
-      <div>
-      <app-student-registration-form></app-student-registration-form>
-
+      <div class="col sub-heading">
+        Name of Admin
       </div>
     </div>
   </div>
+  <hr class="line">
+  <div class="row">
+    <div class="column">
+      <div class="sidebar" style="margin-top: 31px;">
+        <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student Registration</button>
+        <button (click)="selectAuthType('Professor')" type="button" class="nav-button">Professor Registration</button>
+      </div>
+    </div>
+    <div class="column">
+      <app-student-registration-form *ngIf="selectedType == 'Student'"></app-student-registration-form>
+      <app-professor-registration-form *ngIf="selectedType == 'Professor'"></app-professor-registration-form>
+    </div>
+  </div>
 </div>
-  <!--
-  <div class="background">
-    <div class="row">
-
-        <img src="../../assets/images/boy.jpg" class="profile">
-
-        <div class="column">
-          <div class="col heading">
-            Welcome Admin..!!
-          </div>
-          <div class="col sub-heading">
-          Name of Admin
-          </div>
-        </div>
-
-      </div>
-      <hr class="line">
-          <div class="sidebar" style="margin-top: 31px;">
-            <a class="nav-button"><i class="fa fa-fw fa-home"></i>Professor Registration</a>
-            <a class="nav-button"><i class="fa fa-fw fa-home"></i>Student Registration</a>
-      </div>
-    </div> -->

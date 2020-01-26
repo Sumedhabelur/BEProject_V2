@@ -1,8 +1,6 @@
 <div class="background">
   <div class="row">
-
     <img src="../../assets/images/logo.jpg" class="logo">
-
     <div class="column">
       <div class="col heading">
         KEYSTONE SCHOOL OF ENGINEERING
@@ -11,21 +9,19 @@
         By The Teachers, Of The Students, For The Society.
       </div>
     </div>
-
   </div>
   <div>
     <div class="row">
       <div class="sidebar">
-        <a class="nav-button"><i class="fa fa-fw fa-home"></i>Home</a>
-        <a class="nav-button"><i class="fa fa-fw fa-home"></i>Admin</a>
-        <a class="nav-button"><i class="fa fa-fw fa-home"></i>Professor</a>
-        <a class="nav-button"><i class="fa fa-fw fa-home"></i>Student</a>
+        <button (click)="selectAuthType('Home')" type="button" class="nav-button">Home</button>
+        <button (click)="selectAuthType('Admin')" type="button" class="nav-button">Admin</button>
+        <button (click)="selectAuthType('Professor')" type="button" class="nav-button">Professor </button>
+        <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student </button>
       </div>
       <div>
-      <!--app-student-login></app-student-login-->
-          <app-admin-login></app-admin-login>
+        <app-admin-login *ngIf="selectedType == 'Admin'"></app-admin-login>
+        <app-student-login *ngIf="selectedType == 'Student'"></app-student-login>
       </div>
     </div>
   </div>
 </div>
-
