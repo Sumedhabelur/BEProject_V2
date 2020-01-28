@@ -20,6 +20,7 @@
       </div>
       <div>
         <app-admin-login *ngIf="selectedType == 'Admin'"></app-admin-login>
+        <app-professor-login *ngIf="selectedType == 'Professor'"></app-professor-login>
         <app-student-login *ngIf="selectedType == 'Student'"></app-student-login>
       </div>
     </div>
