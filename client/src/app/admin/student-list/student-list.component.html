@@ -6,9 +6,8 @@
           <div class="card" id="table">
             <div class="card-header">
               <strong class="card-title">Students List</strong>
-              <button class="btn btn-danger float-right ml-2" type="button" routerLink='../../auth'>Logout</button>
               <button class="btn btn-primary float-right" type="button" routerLink='../createstudent'>Add
-                Employee</button>
+                Student</button>
             </div>
             <div class="card-body">
               <table class="table">
@@ -18,7 +17,7 @@
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">DOB</th>
+                    <!-- <th scope="col">DOB</th> -->
                     <th scope="col">Admission Date</th>
                     <th scope="col">Class</th>
                     <th scope="col">Username</th>
@@ -26,13 +25,13 @@
                     <th scope="col">Dept</th>
                   </tr>
                 </thead>
-                <tbody *ngFor="let student of student;  let i = index">
+                <tbody *ngFor="let student of students;  let i = index">
                   <tr>
                     <th scope="row">{{i+1}}</th>
                     <td>{{student.firstName}}</td>
                     <td>{{student.lastName}}</td>
                     <td>{{student.email}}</td>
-                    <td>{{student.dob}}</td>
+                    <!-- <td>{{student.dob}}</td> -->
                     <td>{{student.admissionDate}}</td>
                     <td>{{student.class}}</td>
                     <td>{{student.userName}}</td>

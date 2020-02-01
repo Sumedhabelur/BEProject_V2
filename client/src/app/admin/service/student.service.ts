@@ -15,4 +15,8 @@ export class StudentService {
   registerStudent(data) {
     return this.http.post('http://localhost:3000/student/register', data);
   }
+
+  getAllStudent() {
+    return this.http.get('http://localhost:3000/student');
+  }
 }

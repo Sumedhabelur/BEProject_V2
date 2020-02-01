@@ -1,6 +1,6 @@
 <div class="row">
-  <button (click)="type='list'" class="btn btn-primary" type="button">professor List</button>
-  <button (click)="type='form'" class="btn btn-primary" type="button">professor form</button>
+  <button style="margin-left: 30px" (click)="type='list'" class="btn btn-primary" type="button">professor List</button>
+  <button style="margin-left: 10px"(click)="type='form'" class="btn btn-primary" type="button">professor form</button>
 </div>
 
 <app-professor-list *ngIf="type == 'list'"></app-professor-list>
