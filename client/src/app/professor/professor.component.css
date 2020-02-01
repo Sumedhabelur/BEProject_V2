@@ -1,0 +1,64 @@
+.background {
+  background-image: url('../../assets/images/adminProfile.jpg');
+  width: 1688px;
+  height: 1337px;
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.profile {
+  background-image: url('../../assets/images/boy.jpg');
+  margin-left: 72px;
+  margin-top: 27px;
+  border: 2px solid #7c7c7f;
+  border-radius: 500px;
+  width: 171px;
+  height: 158px;
+}
+
+.heading{
+  color: #0b0990;
+    font-size: 55px;
+    font-family: fantasy;
+    text-align: center;
+    margin-left: 259px;
+}
+
+.sub-heading{
+  margin-left: 392px;
+    color: #bb030c;
+    font-size: 41px;
+    font-family: fantasy;
+}
+
+
+.nav-button{
+  background-color: #7DAFF9;
+    border-radius: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 18px 50px 14px 33px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #004085;
+    display: block;
+    font-size: 19px;
+    margin-top: 18px;
+    margin-left: 79px;
+    font-family: cursive;
+    text-align: center;
+}
+.line{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 25;
+  border-top: 3px solid rgba(10, 10, 10, 0.97);
+}
+
+.sidebar
+{
+  margin-top: 31px;
+}

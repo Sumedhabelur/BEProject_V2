@@ -3,7 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProfessorComponent } from './professor.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: ProfessorComponent }
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
