@@ -7,6 +7,7 @@ import { StudentRegistrationFormComponent } from './student-registration-form/st
 import { ProfessorRegistrationFormComponent } from './professor-registration-form/professor-registration-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentListComponent } from './student-list/student-list.component';
+import { StudentComponent } from './student/student.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { StudentListComponent } from './student-list/student-list.component';
     AdminComponent,
     StudentRegistrationFormComponent,
     ProfessorRegistrationFormComponent,
-    StudentListComponent
+    StudentListComponent,
+    StudentComponent
   ],
   imports: [
     CommonModule,
