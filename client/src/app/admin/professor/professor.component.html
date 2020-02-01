@@ -1,0 +1,7 @@
+<div class="row">
+  <button (click)="type='list'" class="btn btn-primary" type="button">professor List</button>
+  <button (click)="type='form'" class="btn btn-primary" type="button">professor form</button>
+</div>
+
+<app-professor-list *ngIf="type == 'list'"></app-professor-list>
+<app-professor-registration-form *ngIf="type == 'form'"></app-professor-registration-form>
