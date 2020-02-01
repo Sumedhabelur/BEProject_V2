@@ -43,17 +43,17 @@ export class ProfessorLoginComponent implements OnInit {
 
     this.router.navigate(['/admin']);
 
-    this.professorService.loginProfessor(data).subscribe((response: any) => {
-      console.log('response', response);
-      console.log('sucessss');
-      if (response.length > 0) {
-       this.router.navigate(['/admin']);
-      } else {
-        console.log('Login Failed');
-        this.isLoginFailed = true;
-      }
+  //   this.professorService.loginProfessor(data).subscribe((response: any) => {
+  //     console.log('response', response);
+  //     console.log('sucessss');
+  //     if (response.length > 0) {
+  //      this.router.navigate(['/admin']);
+  //     } else {
+  //       console.log('Login Failed');
+  //       this.isLoginFailed = true;
+  //     }
 
-    });
-  }
+  //   });
+   }
 
 }

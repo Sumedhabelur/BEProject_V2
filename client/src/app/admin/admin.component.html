@@ -16,11 +16,13 @@
       <div class="sidebar" style="margin-top: 31px;">
         <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student Registration</button>
         <button (click)="selectAuthType('Professor')" type="button" class="nav-button">Professor Registration</button>
+        <button (click)="selectAuthType('studentList')" type="button" class="nav-button">Student List</button>
       </div>
     </div>
     <div class="column">
       <app-student-registration-form *ngIf="selectedType == 'Student'"></app-student-registration-form>
       <app-professor-registration-form *ngIf="selectedType == 'Professor'"></app-professor-registration-form>
+      <app-student-list *ngIf="selectedType == 'studentList'"></app-student-list>
     </div>
   </div>
 </div>
