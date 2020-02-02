@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-subject-add',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectAddComponent implements OnInit {
 
-  constructor() { }
+  subjectForm: FormGroup;
+  professors = ['test', 'test']
+
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
+    this.buildForm();
+  }
+
+  buildForm() {
+
+    this.subjectForm = this.fb.group({
+      subjectName: ['', Validators.required],
+      professor: ['', Validators.required]
+    });
+
   }
 
 }
