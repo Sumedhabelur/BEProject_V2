@@ -10,6 +10,9 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentComponent } from './student/student.component';
 import { ProfessorComponent } from './professor/professor.component';
 import { ProfessorListComponent } from './professor-list/professor-list.component';
+import { SubjectComponent } from './subject/subject.component';
+import { SubjectListComponent } from './subject-list/subject-list.component';
+import { SubjectAddComponent } from './subject-add/subject-add.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { ProfessorListComponent } from './professor-list/professor-list.componen
     StudentListComponent,
     StudentComponent,
     ProfessorComponent,
-    ProfessorListComponent
+    ProfessorListComponent,
+    SubjectComponent,
+    SubjectListComponent,
+    SubjectAddComponent
   ],
   imports: [
     CommonModule,
