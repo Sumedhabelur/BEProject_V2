@@ -22,20 +22,21 @@ exports.updateSubject = async (req, res, next) => {
     console.log('req', req)
 
     const ObjForUpdate = {
-        subjectName: { $set: { subjectName: req.body.field } }, 
-        professor: { $set: { professor: req.body.field } } 
-        }          
+        subjectName: { $set: { subjectName: req.body.field } },
+        professor: { $set: { professor: req.body.field } }
+    }
     try {
         const result = await Subject.update({ _id: req.params.id }, ObjForUpdate[req.body.updateType]);
-        res.status(200).json({result});
+        res.status(200).json({ result });
     } catch (error) {
         res.status(500).json({ message: 'Internal Server Error' })
     }
 }
 
 exports.getAllSubject = (req, res, next) => {
-    Subject.find().
-        then(result => {
+    Subject.find()
+        .populate('professor')
+        .then(result => {
             res.status(200).json({ result });
         })
         .catch(err => {
@@ -57,11 +58,11 @@ exports.getSubjectById = async (req, res, next) => {
 exports.updateSubject = async (req, res, next) => {
     const ObjForUpdate = {
         subjectName: { $set: { subjectName: req.body.field } },
-        professor: { $set: { professor: req.body.field } }       
+        professor: { $set: { professor: req.body.field } }
     }
     try {
         const result = await Subject.update({ _id: req.params.id }, ObjForUpdate[req.body.updateType]);
-        res.status(200).json({result});
+        res.status(200).json({ result });
     } catch (error) {
         res.status(500).json(error)
     }
