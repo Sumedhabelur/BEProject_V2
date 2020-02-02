@@ -16,13 +16,15 @@
                     <th scope="col">#</th>
                     <th scope="col">Subject Name</th>
                     <th scope="col">Professor Name</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody *ngFor="let subject of subjects;  let i = index">
                   <tr>
                     <th scope="row">{{i+1}}</th>
                     <td>{{subject.subjectName}}</td>
-                    <td>{{subject.professor}}</td>
+                    <td>{{subject.professor.firstName + ' ' + subject.professor.lastName}}</td>
                     <td><button class="btn btn-warning" type="button">Edit</button>
                     </td>
                     <td> <button class="btn btn-danger" type="button">Delete</button>
