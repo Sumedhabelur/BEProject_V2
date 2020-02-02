@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-
+  selectedType = 'Student-Edit';
   constructor() { }
 
   ngOnInit() {
   }
-
+  selectAuthType(type: any) {
+    this.selectedType = type;
+  }
 }

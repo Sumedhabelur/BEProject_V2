@@ -14,13 +14,13 @@
   <div class="row">
     <div class="column">
       <div class="sidebar" style="margin-top: 31px;">
-        <button type="button" class="nav-button">Update Profile</button>
+        <button type="button" class="nav-button">Edit Profile</button>
 
       </div>
     </div>
     <div class="column">
-      <!-- <app-student-registration-form *ngIf="selectedType == 'Student'"></app-student-registration-form>
-      <app-professor-registration-form *ngIf="selectedType == 'Professor'"></app-professor-registration-form> -->
+      <app-student-edit *ngIf="selectedType == 'Student-Edit'"></app-student-edit>
+      <!-- <app-professor-registration-form *ngIf="selectedType == 'Professor'"></app-professor-registration-form> -->
     </div>
   </div>
 </div>
