@@ -25,8 +25,8 @@ export class ProfessorLoginComponent implements OnInit {
 
   buildForm() {
     this.professorForm = this.fb.group({
-      userName: ['kseadmin', Validators.required],
-      pass: ['keystone', Validators.required]
+      userName: ['P19C1', Validators.required],
+      pass: ['Random', Validators.required]
     });
   }
 
