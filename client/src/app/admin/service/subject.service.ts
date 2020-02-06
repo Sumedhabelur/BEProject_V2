@@ -6,9 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SubjectService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-    getAllSubjects() {
-      return this.http.get('http://localhost:3000/subject/');
-    }
+  getAllSubjects() {
+    return this.http.get('http://localhost:3000/subject/');
+  }
+
+  addSubject(body) {
+    return this.http.post('http://localhost:3000/subject', body);
+  }
 }
