@@ -1,1 +1,4 @@
-<p>upload-notes works!</p>
+<input type="file" (change)="onfileUpload($event)">
+<div *ngFor="let item of notes">
+  <a href="{{item.file}}"> {{item.file}}</a>
+</div>

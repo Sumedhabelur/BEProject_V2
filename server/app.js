@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
  const classroomRoutes = require("./api/routes/classroom");
  const subjectRoutes = require("./api/routes/subject");
  const lectureRoutes = require("./api/routes/lecture");
+ const noteRoutes = require("./api/routes/note");
 
 
  // need to change
@@ -22,6 +23,7 @@ mongoose.Promise = global.Promise;
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use('/uploads', express.static('uploads'));
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -43,6 +45,7 @@ app.use("/professor",professorRoutes);
 app.use("/classroom",classroomRoutes);
 app.use("/subject",subjectRoutes);
 app.use("/lecture",lectureRoutes);
+app.use("/note",noteRoutes);
 
 // Routes which should handle requests
 

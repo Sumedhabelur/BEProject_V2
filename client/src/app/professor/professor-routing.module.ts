@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'dashboard', component: ProfessorComponent, children: [
-      { path: '', redirectTo: 'viewattendance', pathMatch: 'full' },
+      { path: '', redirectTo: 'notes', pathMatch: 'full' },
       { path: 'notes', component: UploadNotesComponent },
       { path: 'notice', component: UploadNoticeComponent },
       { path: 'updateprofile', component: UpdateProfileComponent },
