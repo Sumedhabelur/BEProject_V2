@@ -14,17 +14,15 @@
   <div class="row">
     <div class="column">
       <div class="sidebar" style="margin-top: 31px;">
-        <button type="button" class="nav-button">Update Profile</button>
-        <button type="button" class="nav-button">Upload Notes</button>
-        <button type="button" class="nav-button">Upload Notice</button>
-        <button type="button" class="nav-button">Take Attendance</button>
-        <button type="button" class="nav-button">View Attendance</button>
-
+        <button [routerLink]="['updateprofile']" type="button" class="nav-button">Update Profile</button>
+        <button [routerLink]="['notes']" routerLinkActive="router-link-active"  type="button" class="nav-button">Upload Notes</button>
+        <button [routerLink]="['notice']" type="button" class="nav-button">Upload Notice</button>
+        <button [routerLink]="['takeattendance']" type="button" class="nav-button">Take Attendance</button>
+        <button [routerLink]="['viewattendance']" type="button" class="nav-button">View Attendance</button>
       </div>
     </div>
     <div class="column">
-      <!-- <app-student-registration-form *ngIf="selectedType == 'Student'"></app-student-registration-form>
-      <app-professor-registration-form *ngIf="selectedType == 'Professor'"></app-professor-registration-form> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
