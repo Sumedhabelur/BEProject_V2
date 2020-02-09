@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const NoteController = require('../controllers/note');
+const NoticeController = require('../controllers/notice');
 const multer = require('multer');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './uploads');
+        cb(null, './uploads/');
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname);
@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 //     } else {
 //       cb(null, false);
 //     }
-//   }; 
+//   };
 
 const upload = multer({
     storage: storage,
@@ -29,8 +29,8 @@ const upload = multer({
     // fileFilter: fileFilter
 });
 
-router.get('/', NoteController.getNotes);
-router.post('/upload', upload.single('note'), NoteController.uploadNote);
-router.post('/delete', NoteController.deleteNote);
+router.get('/', NoticeController.getNotice);
+router.post('/upload', upload.single('notice'), NoticeController.uploadNotice);
+router.post('/delete', NoticeController.deleteNotice);
 
 module.exports = router;

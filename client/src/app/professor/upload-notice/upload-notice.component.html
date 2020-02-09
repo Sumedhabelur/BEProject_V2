@@ -1,1 +1,6 @@
-<p>upload-notice works!</p>
+Upload Notice
+<input type="file" (change)="onfileUpload($event)">
+<div *ngFor="let item of notice">
+  <a href="{{item.file}}"> {{item.file}}</a>
+</div>
+

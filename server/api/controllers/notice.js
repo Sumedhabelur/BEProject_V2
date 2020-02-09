@@ -1,34 +1,34 @@
 const mongoose = require("mongoose");
-const Note = require("../models/note");
+const Notice = require("../models/notice");
 
-exports.getNotes = async (req, res, next) => {
-    const result = await Note.find();
+exports.getNotice = async (req, res, next) => {
+    const result = await Notice.find();
 
     res.status(200).json({
         result: result
     });
 }
 
-exports.uploadNote = async (req, res, next) => {
+exports.uploadNotice = async (req, res, next) => {
 
     path = req.file.path.replace('\\', '/');
-
-    const note = new Note({
+    const notice = new Notice({
         file: `http://localhost:3000/${path}`
     });
 
-    note.save()
+    notice.save()
         .then(result => {
             res.status(201).json(result);
         })
         .catch(err => {
+
             res.status(500).json({
-                pathofmethod: 'uploadNote()',
+                pathofmethod: 'uploadNotice()',
                 error: err
             });
         });
 }
 
-exports.deleteNote = (req, res, next) => {
+exports.deleteNotice = (req, res, next) => {
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfessorService } from '../service/professor.service';
 
 @Component({
   selector: 'app-upload-notice',
@@ -7,9 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadNoticeComponent implements OnInit {
 
-  constructor() { }
+  file;
+  notice = [];
+
+  constructor(
+    private professorService: ProfessorService
+  ) { }
 
   ngOnInit() {
+    this.getNotice();
   }
+
+  onfileUpload(event) {
+    this.file = event.target.files[0];
+
+    const formData = new FormData();
+    formData.append('notice', this.file, this.file.name);
+
+    this.professorService.uploadNotice(formData).subscribe((response) => {
+      this.getNotice();
+    });
+
+  }
+
+  getNotice() {
+    this.professorService.getNotice().subscribe((res: any) => {
+      this.notice = res.result;
+    });
+  }
+
+
 
 }

@@ -12,6 +12,7 @@ const mongoose = require("mongoose");
  const subjectRoutes = require("./api/routes/subject");
  const lectureRoutes = require("./api/routes/lecture");
  const noteRoutes = require("./api/routes/note");
+ const noticeRoutes = require("./api/routes/notice");
 
 
  // need to change
@@ -46,6 +47,7 @@ app.use("/classroom",classroomRoutes);
 app.use("/subject",subjectRoutes);
 app.use("/lecture",lectureRoutes);
 app.use("/note",noteRoutes);
+app.use("/notice",noticeRoutes);
 
 // Routes which should handle requests
 

@@ -12,7 +12,15 @@ export class ProfessorService {
     return this.http.post('http://localhost:3000/note/upload', data);
   }
 
+  uploadNotice(data) {
+    return this.http.post('http://localhost:3000/notice/upload', data);
+  }
+
   getNotes() {
     return this.http.get('http://localhost:3000/note');
+  }
+
+  getNotice() {
+    return this.http.get('http://localhost:3000/notice');
   }
 }
