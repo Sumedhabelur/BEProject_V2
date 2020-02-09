@@ -12,7 +12,7 @@ export class ProfessorService {
   constructor(private http: HttpClient, private router: Router) {
 
     console.log('this.router.url', this.router.url)
-    this.professorId = this.router.url.split('/')[2];
+    this.professorId = this.router.url.split('')[2];
   }
 
   uploadFile(data) {
@@ -30,4 +30,5 @@ export class ProfessorService {
   getNotice() {
     return this.http.get("http://localhost:3000/notice");
   }
+
 }

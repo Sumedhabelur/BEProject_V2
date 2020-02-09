@@ -134,6 +134,19 @@ exports.getAllStudent = (req, res, next) => {
             res.status(500).json({ message: 'Internal Server Error' })
         })
 }
+
+exports.getStudentByClass = async (req, res, next) => {
+    console.log('req.params.class', req.body.class)
+    Student.find({class: req.body.class })
+        .then(result => {
+            res.status(200).json({ result });
+        })
+        .catch(err => {
+            console.log('err', err)
+            res.status(500).json({ message: 'Internal Server Error' })
+        })
+}
+
 exports.getStudentById = async (req, res, next) => {
     console.log('req.params.id', req.params.id)
     Student.find({ _id: req.params.id }).
