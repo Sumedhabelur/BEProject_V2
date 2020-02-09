@@ -41,13 +41,13 @@ export class ProfessorLoginComponent implements OnInit {
       pass: this.professorForm.get('pass').value
     };
 
-    this.router.navigate(['/professor']);
+    // this.router.navigate(['/professor']);
 
     this.professorService.loginProfessor(data).subscribe((response: any) => {
       console.log('response', response);
       console.log('sucessss');
-      if (response.length > 0) {
-       this.router.navigate(['/professor']);
+      if (response.result.length > 0) {
+       this.router.navigate([`/professor/${response.result[0]._id}`]);
       } else {
         console.log('Login Failed');
         this.isLoginFailed = true;
