@@ -136,8 +136,8 @@ exports.getAllStudent = (req, res, next) => {
 }
 
 exports.getStudentByClass = async (req, res, next) => {
-    console.log('req.params.class', req.body.class)
-    Student.find({class: req.body.class })
+    console.log('req.params.class', req.params.class)
+    Student.find({class: req.params.class })
         .then(result => {
             res.status(200).json({ result });
         })

@@ -9,11 +9,11 @@ import { StudentAttendanceService } from '../service/student-attendance.service'
 })
 export class TakeAttendanceComponent implements OnInit {
   attendanceForm: FormGroup;
-  studentAttendanceService: any;
+  students = [];
 
   constructor(
     private fb: FormBuilder,
-    private studentAttendance: StudentAttendanceService
+    private studentAttendanceService: StudentAttendanceService
   ) {}
 
   ngOnInit() {
@@ -27,11 +27,22 @@ export class TakeAttendanceComponent implements OnInit {
   }
 
   onClassSelect() {
-    this.getStudentByClass(this.attendanceForm.value.class);
+    const data = this.attendanceForm.get('class').value;
+    // this.getStudentByClass(this.attendanceForm.value.class);
+    this.getStudentByClass(data);
+
+    console.log(data);
   }
 
-  getStudentByClass(className) {
-     this.studentAttendanceService.getStudentByClass(className).subscribe((res: any) => {
-     });
+  // getStudentByClass(className) {
+  //    this.studentAttendanceService.getStudentByClass(className).subscribe((res: any) => {
+  //     this.students = response.result;
+  //    });
+  // }
+  getStudentByClass(data) {
+    this.studentAttendanceService.getStudentByClass(data).subscribe((response: any) => {
+      this.students = response.result;
+      console.log('response', response);
+    });
   }
 }

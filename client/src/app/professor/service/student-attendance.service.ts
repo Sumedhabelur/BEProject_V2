@@ -10,8 +10,8 @@ export class StudentAttendanceService {
 
   constructor(private http: HttpClient) { }
 
-  getStudentByClass() {
-    return this.http.get("http://localhost:3000/class");
+  getStudentByClass(data) {
+    return this.http.get(`http://localhost:3000/student/class/${data}`);
 
   }
 }
