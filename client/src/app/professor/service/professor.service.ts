@@ -8,11 +8,18 @@ import { Router } from "@angular/router";
 export class ProfessorService {
 
   professorId;
+  professor;
 
   constructor(private http: HttpClient, private router: Router) {
 
-    console.log('this.router.url', this.router.url)
-    this.professorId = this.router.url.split('')[2];
+    this.professorId = this.router.url.split('/')[2];
+    this.getProfessorById(this.professorId).subscribe((professor: any) => {
+      this.professor = professor;
+    });
+  }
+
+  getProfessorById(professorId) {
+    return this.http.get(`http://localhost:3000/professor/${professorId}`);
   }
 
   uploadFile(data) {

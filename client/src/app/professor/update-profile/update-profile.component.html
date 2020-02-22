@@ -1,1 +1,45 @@
-<p>update-profile works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-right:'340px' ">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Professor Details</h5>
+          <form class="form-signin" [formGroup]="detailForm">
+
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" class="form-control" formControlName="firstName" placeholder="Enter Firstname Here"
+                required autofocus>
+                <button (click)="updateProf('firstName')" class="btn btn-sm btn-primary">Edit</button>
+            </div>
+
+            <!-- <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" formControlName="pass">
+            </div> -->
+
+            <!-- <div class="form-group">
+              <label>firstName</label>
+              <input type="text" class="form-control" formControlName="firstName" placeholder="Enter Username Here" required autofocus>
+            </div>
+            <div class="form-group">
+              <label>lastName</label>
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Username Here" required autofocus>
+            </div>
+            <div class="form-group">
+              <label>class</label>
+              <input type="text" class="form-control" formControlName="class" placeholder="Enter Username Here" required autofocus>
+            </div> -->
+
+
+
+            <!-- <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="onUpdate()" type="submit">Sign
+              in</button>
+            <hr class="my-4"> -->
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
