@@ -38,4 +38,10 @@ export class ProfessorService {
     return this.http.get("http://localhost:3000/notice");
   }
 
+  updateProfByField(professorId, updateType, fieldToUpdate) {
+    return this.http.put(`http://localhost:3000/professor/update/${professorId}`, {
+      updateType,
+      field: fieldToUpdate
+    });
+  }
 }

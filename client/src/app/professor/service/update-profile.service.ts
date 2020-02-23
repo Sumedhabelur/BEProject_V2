@@ -11,10 +11,5 @@ export class UpdateProfileService {
   getProfessorById(profId) {
     return this.http.get(`http://localhost:3000/professor/${profId}`);
   }
-  updateProfByField(profId, updateType, fieldToUpdate) {
-    return this.http.put(`http://localhost:3000/professor/update/${profId}`, {
-      updateType: updateType,
-      field: fieldToUpdate
-    });
-  }
+  
 }

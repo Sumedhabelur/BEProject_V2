@@ -7,14 +7,17 @@ import { ProfessorService } from './service/professor.service';
   styleUrls: ['./professor.component.css']
 })
 export class ProfessorComponent implements OnInit {
-  prof;
+  professor;
   constructor(
     private professorService: ProfessorService
   ) { }
 
   ngOnInit() {
-    this.prof = this.professorService.professor.firstName;
-    console.log('this.prof', this.prof);
+    this.professorService.getProfessorById( this.professorService.professorId).subscribe((professor: any) => {
+      this.professor = professor.result;
+      console.log('Professor', this.professor);
+      console.log('Professor Name:', this.professor.firstName);
+    });
   }
 
 }
