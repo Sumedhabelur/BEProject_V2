@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div *ngIf="!isLoading" class="container-fluid">
   <div class="content mt-3">
     <div class="animated fadeIn">
       <div class="row">
@@ -44,4 +44,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="loading" *ngIf="isLoading">
+Loading...
 </div>
