@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProfessorService } from '../service/professor.service';
 
@@ -13,41 +12,35 @@ export class UpdateProfileComponent implements OnInit {
   professor: any;
   detailForm: FormGroup;
   constructor(
-    private active: ActivatedRoute,
     private professorService: ProfessorService,
     private fb: FormBuilder
   ) { }
 
   ngOnInit() {
-    this.active.params.subscribe(params => {
-      this.professorId = params.id;
-      this.getProfessorById(this.professorId);
-    });
+    this.getProfessorById(this.professorService.professorId);
     this.buildForm();
   }
 
   buildForm() {
     this.detailForm = this.fb.group({
-      email: [""],
-      pass: [""],
       firstName: [""],
       lastName: [""],
-      joiningDate: [""],
+      email: [""],
+      password: [""],
       dob: [""],
-      userName: [""]
     });
   }
 
-  getProfessorById(professorId) {
+  getProfessorById(professorId: string) {
+    console.log('professorId', professorId)
+
     this.professorService.getProfessorById(professorId).subscribe((res: any) => {
-      console.log("res", res.result[0]);
-      this.professor = res.result[0];
+      this.professor = res.result;
       this.detailForm.get('firstName').setValue(this.professor.firstName);
       this.detailForm.get('lastName').setValue(this.professor.lastName);
       this.detailForm.get('email').setValue(this.professor.email);
-      this.detailForm.get('joiningDate').setValue(this.professor.joiningDate);
       this.detailForm.get('dob').setValue(this.professor.dob);
-      this.detailForm.get('userName').setValue(this.professor.userName);
+      this.detailForm.get('password').setValue(this.professor.pass);
     });
   }
 
