@@ -34,24 +34,17 @@ export class AdminLoginComponent implements OnInit {
   }
 
   loginAdmin() {
-    console.log(this.adminForm.get('userName'));
     const data = {
       userName: this.adminForm.get('userName').value,
       pass: this.adminForm.get('pass').value
     };
 
-    this.router.navigate(['/admin']);
-
     this.adminService.loginAdmin(data).subscribe((response: any) => {
-      console.log('response', response);
-      console.log('sucessss');
-      if (response.length > 0) {
+      if (response) {
        this.router.navigate(['/admin']);
       } else {
-        console.log('Login Failed');
         this.isLoginFailed = true;
       }
-
     });
   }
 }
