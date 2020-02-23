@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 const Admin = require("../models/admin");
 
 exports.loginAdmin = async (req, res, next) => {
-    const result = await Admin.find({ userName: req.body.userName, pass: req.body.pass });
-    console.log('result', result)
+    const result = await Admin.findOne({ userName: req.body.userName, pass: req.body.pass });
     res.status(201).json(result);
 }
 

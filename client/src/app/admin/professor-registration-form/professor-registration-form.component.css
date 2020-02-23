@@ -2,7 +2,7 @@
   background-color: #6eaef3;
   margin-left: 227px;
   margin-top: 30px;
-  height: 950px;
+  /* height: 950px; */
   width: 526px;
   border-radius: 10px;
 }
@@ -13,5 +13,5 @@
 }
 
 .form-group{
-  margin-bottom: 5rem;
+  /* margin-bottom: 5rem; */
 }

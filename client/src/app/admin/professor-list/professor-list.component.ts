@@ -9,6 +9,7 @@ import { ProfessorService } from '../service/professor.service';
 export class ProfessorListComponent implements OnInit {
 
   professors = [];
+  isLoading = true;
 
   constructor(
     private professorService: ProfessorService
@@ -19,7 +20,9 @@ export class ProfessorListComponent implements OnInit {
   }
 
   getAllProfessors() {
+    this.isLoading = true;
     this.professorService.getAllProfessors().subscribe((response: any) => {
+      this.isLoading = false;
       this.professors = response.result;
     });
   }
