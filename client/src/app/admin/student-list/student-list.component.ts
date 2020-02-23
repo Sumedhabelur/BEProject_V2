@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../service/student.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-student-list',
@@ -7,21 +8,38 @@ import { StudentService } from '../service/student.service';
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-
+  listForm: FormGroup;
   students = [];
 
   constructor(
+    private fb: FormBuilder,
     private studentService: StudentService
   ) { }
 
   ngOnInit() {
-    this.getAllStudents();
-  }
-
-  getAllStudents() {
-    this.studentService.getAllStudent().subscribe((response: any) => {
-      this.students = response.result;
+    this.listForm = this.fb.group({
+      class: ['None', Validators.required]
     });
   }
 
+  buildForm() {
+    this.listForm = this.fb.group({
+      class: ['None', Validators.required]
+    });
+  }
+
+  onClassSelect() {
+    const data = this.listForm.get('class').value;
+    // this.getStudentByClass(this.attendanceForm.value.class);
+    this.getStudentByClass(data);
+
+    console.log(data);
+  }
+
+  getStudentByClass(data) {
+    this.studentService.getStudentByClass(data).subscribe((response: any) => {
+      this.students = response.result;
+      console.log('response', response);
+    });
+  }
 }

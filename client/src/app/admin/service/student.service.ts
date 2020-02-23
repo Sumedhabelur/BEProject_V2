@@ -19,4 +19,9 @@ export class StudentService {
   getAllStudent() {
     return this.http.get('http://localhost:3000/student');
   }
+
+  getStudentByClass(data) {
+    return this.http.get(`http://localhost:3000/student/class/${data}`);
+
+  }
 }

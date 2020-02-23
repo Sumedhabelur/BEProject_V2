@@ -6,10 +6,19 @@
           <div class="card" id="table">
             <div class="card-header">
               <strong class="card-title">Students List</strong>
-              <button class="btn btn-primary float-right" type="button" routerLink='../createstudent'>Add
-                Student</button>
             </div>
             <div class="card-body">
+                <form [formGroup]="listForm" class="form-register">
+                    <div class="form-group">
+                      <label>Select Class</label>
+                      <select (change)="onClassSelect()" formControlName="class" class="form-control">
+                        <option>None</option>
+                        <option>SE</option>
+                        <option>TE</option>
+                        <option>BE</option>
+                      </select>
+                    </div>
+                </form>
               <table class="table">
                 <thead class="thead-dark">
                   <tr>
