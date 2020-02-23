@@ -54,22 +54,6 @@ exports.updateProfessor = async (req, res, next) => {
     } catch (error) {
         res.status(500).json(error)
     }
-    
-    // let result = await Professor.findById(req.params.id);
-    // if (result) {
-    //     res.status(400).json({ message: 'No data found' });
-    //     console.log(result);
-    // }
-    // else {
-    //     if (req.body.email)
-    //         result.email = req.body.email;
-    //     result.save()
-    //         .then((result) => {
-    //             res.status(200).json({ result })
-    //         })
-    //         .catch(err => {
-    //             res.status(500).json({ message: 'Internal Server Error' })
-    //         })
 }
 exports.getAllProfessor = (req, res, next) => {
     Professor.find().

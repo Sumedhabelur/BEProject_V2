@@ -8,7 +8,6 @@ import { ProfessorService } from '../service/professor.service';
   styleUrls: ['./update-profile.component.css']
 })
 export class UpdateProfileComponent implements OnInit {
-  professorId: string;
   professor: any;
   detailForm: FormGroup;
   constructor(
@@ -32,8 +31,6 @@ export class UpdateProfileComponent implements OnInit {
   }
 
   getProfessorById(professorId: string) {
-    console.log('professorId', professorId)
-
     this.professorService.getProfessorById(professorId).subscribe((res: any) => {
       this.professor = res.result;
       this.detailForm.get('firstName').setValue(this.professor.firstName);
@@ -45,9 +42,9 @@ export class UpdateProfileComponent implements OnInit {
   }
 
   updateProf(updateType) {
-    this.professorService.updateProfByField( this.professorId, updateType, this.detailForm.get(updateType).value )
+    this.professorService.updateProfByField(this.professorService.professorId, updateType, this.detailForm.get(updateType).value )
       .subscribe((res: any) => {
-        this.getProfessorById(this.professorId);
+        this.getProfessorById(this.professorService.professorId);
       });
   }
 }
