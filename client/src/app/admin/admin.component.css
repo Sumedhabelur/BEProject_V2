@@ -37,20 +37,20 @@
 
 
 .nav-button{
-  background-color: #7DAFF9;
-    border-radius: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-    padding: 18px 50px 14px 33px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #004085;
-    display: block;
-    font-size: 19px;
-    margin-top: 18px;
-    margin-left: 79px;
-    font-family: cursive;
-    text-align: center;
+  background-color: #cc1b2b;
+  border-radius: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 18px 50px 14px 33px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  font-size: 19px;
+  margin-top: 18px;
+  margin-left: 79px;
+  font-family: cursive;
+  text-align: center;
 }
 .line{
   margin-top: 1rem;

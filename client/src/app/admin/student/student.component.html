@@ -1,7 +1,27 @@
-<div class="row">
-  <button style="margin-left: 30px" (click)="type='list'" class="btn btn-primary" type="button">View Student List</button>
-  <button style="margin-left: 10px" (click)="type='form'" class="btn btn-primary" type="button">Register Student</button>
+<!-- <div class="row">
+  <div class="column">
+      <div class="sidebar" style="margin-top: 31px;">
+      <button style="margin-left: 30px" (click)="type='list'" class="btn btn-primary" type="button">View Student List</button>
+      <button style="margin-left: 10px" (click)="type='form'" class="btn btn-primary" type="button">Register Student</button>
+      </div>
+    </div>
 </div>
 
 <app-student-list *ngIf="type == 'list'"></app-student-list>
-<app-student-registration-form *ngIf="type == 'form'"></app-student-registration-form>
+<app-student-registration-form *ngIf="type == 'form'"></app-student-registration-form> -->
+
+<div class="row">
+    <div class="column">
+      <div class="sidebar" style="margin-top: 10px;
+      position: relative;
+      /* left: -332px; */
+      right: 317px;">
+          <button style="margin-left: 10px" (click)="type='list'" class="btn btn-primary" type="button">View Student List</button>
+          <button style="margin-left: 10px" (click)="type='form'" class="btn btn-primary" type="button">Register Student</button>
+      </div>
+    </div>
+    <div class="column">
+        <app-student-list *ngIf="type == 'list'"></app-student-list>
+        <app-student-registration-form *ngIf="type == 'form'"></app-student-registration-form>
+    </div>
+</div>
