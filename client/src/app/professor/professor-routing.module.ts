@@ -6,12 +6,13 @@ import { UploadNoticeComponent } from './upload-notice/upload-notice.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
 import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
+import { ProfessorGuard } from './professor-guard/professor.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full', canActivate : [ProfessorGuard] },
   {
-    path: 'dashboard', component: ProfessorComponent, children: [
+    path: 'dashboard', component: ProfessorComponent, canActivate : [ProfessorGuard], children: [
       { path: '', redirectTo: 'notes', pathMatch: 'full' },
       { path: 'notes', component: UploadNotesComponent },
       { path: 'notice', component: UploadNoticeComponent },
