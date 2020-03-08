@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   selectedType = 'Student';
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+   this.checkWhoIsLogin();
+  }
+
+  checkWhoIsLogin() {
+    const userType = localStorage.getItem('userType');
+    if (userType === 'admin') {
+      this.router.navigate(['admin/dashboard']);
+    }
+    if (userType === 'student') {
+      this.router.navigate(['student/dashboard']);
+     }
+  }
 
   selectAuthType(type) {
     this.selectedType = type;

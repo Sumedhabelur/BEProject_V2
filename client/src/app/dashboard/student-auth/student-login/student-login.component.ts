@@ -40,9 +40,12 @@ export class StudentLoginComponent implements OnInit {
       userName: this.loginForm.get('userName').value,
       pass: this.loginForm.get('pass').value
     };
+
     this.studentService.loginStudent(data).subscribe((response: any) => {
       console.log('response', response);
       if (response.length > 0) {
+        localStorage.setItem('userType', 'student');
+        localStorage.setItem('token', 'token');
         this.router.navigate(['/student']);
       } else {
         console.log('Login Failed');

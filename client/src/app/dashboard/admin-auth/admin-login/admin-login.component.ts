@@ -41,7 +41,9 @@ export class AdminLoginComponent implements OnInit {
 
     this.adminService.loginAdmin(data).subscribe((response: any) => {
       if (response) {
-       this.router.navigate(['/admin']);
+        localStorage.setItem('userType', 'admin');
+        localStorage.setItem('token', 'token');
+        this.router.navigate(['/admin']);
       } else {
         this.isLoginFailed = true;
       }
