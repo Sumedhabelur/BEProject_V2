@@ -23,8 +23,13 @@ export class DashboardComponent implements OnInit {
       this.router.navigate(['admin/dashboard']);
     }
     if (userType === 'student') {
-      this.router.navigate(['student/dashboard']);
-     }
+      const studentId = localStorage.getItem('studentId');
+      this.router.navigate(['student', studentId]);
+    }
+    if (userType === 'professor') {
+      const professorId = localStorage.getItem('professorId');
+      this.router.navigate([`professor/${professorId}`]);
+    }
   }
 
   selectAuthType(type) {

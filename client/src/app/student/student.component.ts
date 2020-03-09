@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -7,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
   selectedType = 'Student-Edit';
-  constructor() { }
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
+
   selectAuthType(type: any) {
     this.selectedType = type;
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

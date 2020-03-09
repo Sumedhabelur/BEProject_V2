@@ -8,6 +8,9 @@
       <div class="col sub-heading">
         Name of Student
       </div>
+      <div class="column logout-btn">
+        <button (click)="logout()" class="btn btn-danger" type="button">Logout</button>
+      </div>
     </div>
   </div>
   <hr class="line">
@@ -15,12 +18,10 @@
     <div class="column">
       <div class="sidebar" style="margin-top: 31px;">
         <button type="button" class="nav-button">Edit Profile</button>
-
       </div>
     </div>
     <div class="column">
-      <app-student-edit *ngIf="selectedType == 'Student-Edit'"></app-student-edit>
-      <!-- <app-professor-registration-form *ngIf="selectedType == 'Professor'"></app-professor-registration-form> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
