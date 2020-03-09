@@ -20,3 +20,7 @@ button{
     font-family: cursive;
     text-align: center;
 }
+
+.column {
+  margin-right: -320px;
+}

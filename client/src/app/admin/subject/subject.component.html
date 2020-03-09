@@ -1,6 +1,22 @@
-<div class="row">
+<!-- <div class="row">
   <button style="margin-left: 30px" (click)="type='list'" class="btn btn-primary" type="button">Subject List</button>
   <button style="margin-left: 10px" (click)="type='add'" class="btn btn-primary" type="button">Subject Add</button>
 </div>
 <app-subject-list *ngIf="type == 'list'"></app-subject-list>
-<app-subject-add *ngIf="type == 'add'"></app-subject-add>
+<app-subject-add *ngIf="type == 'add'"></app-subject-add> -->
+
+<div class="row">
+  <div class="column">
+    <div class="sidebar" style="margin-top: 10px;
+    position: relative;
+    /* left: -332px; */
+    right: 317px;">
+        <button style="margin-left: 10px" (click)="type='list'" class="btn btn-primary" type="button">View Subjects</button>
+        <button style="margin-left: 10px" (click)="type='form'" class="btn btn-primary" type="button">Add Subjects</button>
+    </div>
+  </div>
+  <div class="column">
+    <app-subject-list *ngIf="type == 'list'"></app-subject-list>
+    <app-subject-add *ngIf="type == 'add'"></app-subject-add>
+  </div>
+</div>
