@@ -2,7 +2,7 @@
   background-color: #6eaef3;
   margin-left: 227px;
   margin-top: 30px;
-  height: 950px;
+  height: 871px;
   width: 526px;
   border-radius: 10px;
 }
@@ -10,8 +10,24 @@
 .register{
   color: white;
   text-align: center;
+  font-family: cursive;
+  font-size: x-large;
+  text-decoration-line: underline;
 }
 
 .form-group{
   margin-bottom: 2rem;
+}
+
+label{
+  font-family: cursive;
+  color: white;
+  font-size: larger;
+}
+
+button
+{
+  background-color: orange;
+  font-family: cursive;
+  font-size: x-large;
 }

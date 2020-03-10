@@ -24,3 +24,8 @@ button{
 .column {
   margin-right: -320px;
 }
+
+app-student-list
+ {
+  margin-left: -205px;
+ }
