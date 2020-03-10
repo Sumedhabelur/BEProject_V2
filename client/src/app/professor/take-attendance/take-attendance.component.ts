@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { StudentAttendanceService } from '../service/student-attendance.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: "app-take-attendance",
@@ -10,6 +11,7 @@ import { StudentAttendanceService } from '../service/student-attendance.service'
 export class TakeAttendanceComponent implements OnInit {
   attendanceForm: FormGroup;
   students = [];
+  studentsIds = [];
 
   constructor(
     private fb: FormBuilder,
@@ -44,5 +46,20 @@ export class TakeAttendanceComponent implements OnInit {
       this.students = response.result;
       console.log('response', response);
     });
+  }
+
+  markAttendance(student) {
+    console.log('student', student)
+
+
+    if (this.studentsIds.includes(student._id)) {
+      _.remove(this.studentsIds, (curStudentId) => {
+        return curStudentId === student._id;
+      });
+    } else {
+      this.studentsIds.push(student._id);
+    }
+
+    console.log('this.studentsIds', this.studentsIds)
   }
 }

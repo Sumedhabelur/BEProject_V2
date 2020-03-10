@@ -43,7 +43,7 @@
           <td>{{student.lastName}}</td>
           <td>
             <label class="checkbox-inline">
-              <input type="checkbox" name = "present">Present
+              <input type="checkbox" (click)="markAttendance(student)" name="present">Present
             </label>
           </td>
           <!-- <td>{{student.email}}</td>
