@@ -5,6 +5,7 @@
         <div class="form-group">
           <label>Class</label>
           <select (change)="onClassSelect()" formControlName="class" class="form-control">
+            <option>NONE</option>
             <option>SE</option>
             <option>TE</option>
             <option>BE</option>
@@ -18,6 +19,13 @@
     </div>
   </div>
 
+<div>
+  <label>Select Subject</label>
+    <select formControlName="subject" class="form-control">
+        <option *ngIf="subjects.length==0">No subjects found</option>
+        <option [value]="item._id" *ngFor="let item of subjects">{{item.subjectName}}</option>
+    </select>
+</div>
 
   <div class="card-body">
     <table class="table">
@@ -27,13 +35,6 @@
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
           <th scope="col">Present</th>
-          <!-- <th scope="col">Email</th>
-          <th scope="col">DOB</th>
-          <th scope="col">Admission Date</th>
-          <th scope="col">Class</th>
-          <th scope="col">Username</th>
-          <th scope="col">typeOfAdmission</th>
-          <th scope="col">Dept</th> -->
         </tr>
       </thead>
       <tbody *ngFor="let student of students;  let i = index">
@@ -46,17 +47,6 @@
               <input type="checkbox" (click)="markAttendance(student)" name="present">Present
             </label>
           </td>
-          <!-- <td>{{student.email}}</td>
-          <td>{{student.dob}}</td>
-          <td>{{student.admissionDate}}</td>
-          <td>{{student.class}}</td>
-          <td>{{student.userName}}</td>
-          <td>{{student.typeOfAdmission}}</td>
-          <td>{{student.dept}}</td> -->
-          <!-- <td><button class="btn btn-warning" type="button">Edit</button>
-          </td>
-          <td> <button class="btn btn-danger" type="button">Delete</button>
-          </td> -->
         </tr>
       </tbody>
     </table>

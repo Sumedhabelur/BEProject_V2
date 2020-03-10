@@ -12,6 +12,7 @@ export class TakeAttendanceComponent implements OnInit {
   attendanceForm: FormGroup;
   students = [];
   studentsIds = [];
+  subjects = [];
 
   constructor(
     private fb: FormBuilder,
@@ -20,6 +21,7 @@ export class TakeAttendanceComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+    this.getSubjects();
   }
 
   buildForm() {
@@ -35,12 +37,12 @@ export class TakeAttendanceComponent implements OnInit {
 
     console.log(data);
   }
-
-  // getStudentByClass(className) {
-  //    this.studentAttendanceService.getStudentByClass(className).subscribe((res: any) => {
-  //     this.students = response.result;
-  //    });
-  // }
+  getSubjects(){
+    this.studentAttendanceService.getAllSubjects().subscribe((res: any) => {
+      this.subjects = res.result;
+      console.log(this.subjects);
+    });
+  }
   getStudentByClass(data) {
     this.studentAttendanceService.getStudentByClass(data).subscribe((response: any) => {
       this.students = response.result;

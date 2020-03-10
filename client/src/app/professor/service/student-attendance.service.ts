@@ -12,6 +12,9 @@ export class StudentAttendanceService {
 
   getStudentByClass(data) {
     return this.http.get(`http://localhost:3000/student/class/${data}`);
+  }
 
+  getAllSubjects() {
+    return this.http.get('http://localhost:3000/subject/');
   }
 }
