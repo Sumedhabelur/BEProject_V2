@@ -26,22 +26,27 @@ export class TakeAttendanceComponent implements OnInit {
 
   buildForm() {
     this.attendanceForm = this.fb.group({
-      class: ['SE', Validators.required]
+      class: ['SE', Validators.required],
+      subject: [undefined, Validators.required]
     });
   }
 
   onClassSelect() {
-    const data = this.attendanceForm.get('class').value;
+    const className = this.attendanceForm.get('class').value;
     // this.getStudentByClass(this.attendanceForm.value.class);
-    this.getStudentByClass(data);
+    this.getStudentByClass(className);
 
-    console.log(data);
+    console.log(className);
   }
   getSubjects(){
     this.studentAttendanceService.getAllSubjects().subscribe((res: any) => {
       this.subjects = res.result;
       console.log(this.subjects);
     });
+  }
+  onSubjectSelect() {
+    const subjectName = this.attendanceForm.get('subject').value;
+    console.log('Subject', subjectName);
   }
   getStudentByClass(data) {
     this.studentAttendanceService.getStudentByClass(data).subscribe((response: any) => {

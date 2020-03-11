@@ -11,21 +11,20 @@
             <option>BE</option>
           </select>
         </div>
-         <button [disabled]="attendanceForm.invalid" (click)="onClassSelect()"
-          class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button>
-        <div class="register-link mt-15 text-center">
-        </div>
-      </form>
+         <!-- <button [disabled]="attendanceForm.invalid" (click)="onClassSelect()"
+          class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button> -->
+          <div>
+            <label>Select Subject</label>
+              <select (change)="onSubjectSelect()" formControlName="subject" class="form-control">
+                  <option *ngIf="subjects.length==0">No subjects found</option>
+                  <option [value]="item._id" *ngFor="let item of subjects">{{item.subjectName}}</option>
+              </select>
+          </div>
+        </form>
     </div>
   </div>
-
-<div>
-  <label>Select Subject</label>
-    <select formControlName="subject" class="form-control">
-        <option *ngIf="subjects.length==0">No subjects found</option>
-        <option [value]="item._id" *ngFor="let item of subjects">{{item.subjectName}}</option>
-    </select>
-</div>
+<!-- <button [disabled]="attendanceForm.invalid" (click)="onSubjectSelect()"
+class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button> -->
 
   <div class="card-body">
     <table class="table">
