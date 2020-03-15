@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessorService } from '../service/professor.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-upload-notes',
@@ -8,15 +9,42 @@ import { ProfessorService } from '../service/professor.service';
 })
 export class UploadNotesComponent implements OnInit {
 
+  uploadForm : FormGroup;
   file;
+  subjects = [];
   notes = [];
 
   constructor(
-    private professorService: ProfessorService
-  ) { }
+    private fb: FormBuilder,
+    private professorService: ProfessorService  ) { }
 
   ngOnInit() {
-    this.getNotes();
+    this.buildForm();
+    this.getSubjects();
+  }
+
+  buildForm() {
+    this.uploadForm = this.fb.group({
+      title: ['Topic Name',Validators.required],
+      class: ['None', Validators.required],
+      subject: [undefined, Validators.required]
+    });
+  }
+
+  onClassSelect() {
+    const className = this.uploadForm.get('class').value;
+    console.log(className);
+  }
+
+  getSubjects(){
+    this.professorService.getAllSubjects().subscribe((res: any) => {
+      this.subjects = res.result;
+      console.log(this.subjects);
+    });
+  }
+  onSubjectSelect() {
+    const subjectName = this.uploadForm.get('subject').value;
+    console.log('Subject', subjectName);
   }
 
   onfileUpload(event) {

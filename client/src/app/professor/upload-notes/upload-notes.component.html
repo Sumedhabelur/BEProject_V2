@@ -1,4 +1,44 @@
-<input type="file" (change)="onfileUpload($event)">
+<!-- <input type="file" (change)="onfileUpload($event)">
 <div *ngFor="let item of notes">
   <a href="{{item.file}}"> {{item.file}}</a>
+</div> -->
+
+
+<div class="background">
+  <div class="form-group">
+    <div class="card-body">
+      <h5 class="register">Upload Notes</h5>
+      <form [formGroup]="uploadForm" class="form-register">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" formControlName="title" placeholder="Enter notes title Here" required autofocus>
+        </div>
+        <div class="form-group">
+          <label>Class</label>
+          <select (change)="onClassSelect()" formControlName="class" class="form-control">
+            <option>NONE</option>
+            <option>SE</option>
+            <option>TE</option>
+            <option>BE</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select (change)="onSubjectSelect()" formControlName="subject" class="form-control">
+            <option *ngIf="subjects.length==0">No subjects found</option>
+            <option [value]="item._id" *ngFor="let item of subjects">{{item.subjectName}}</option>
+        </select>
+        </div>
+        <div class="form-group">
+          <label>Browse File to upload</label><br>
+          <input type="file" (change)="onfileUpload($event)">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="onfileUpload()">Upload</button>
+        <div class="form-group" *ngFor="let item of notes">
+          <label>Uploaded File Link</label>
+          <a href="{{item.file}}"> {{item.file}}</a>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

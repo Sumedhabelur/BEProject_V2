@@ -44,4 +44,9 @@ export class ProfessorService {
       field: fieldToUpdate
     });
   }
+
+  getAllSubjects() {
+    return this.http.get('http://localhost:3000/subject/');
+  }
+  
 }
