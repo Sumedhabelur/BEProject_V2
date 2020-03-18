@@ -19,6 +19,7 @@
         <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student </button>
       </div>
       <div>
+        <app-home *ngIf="selectedType == 'Home'"></app-home>
         <app-admin-login *ngIf="selectedType == 'Admin'"></app-admin-login>
         <app-professor-login *ngIf="selectedType == 'Professor'"></app-professor-login>
         <app-student-login *ngIf="selectedType == 'Student'"></app-student-login>

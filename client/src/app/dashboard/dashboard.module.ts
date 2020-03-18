@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminAuthModule } from './admin-auth/admin-auth.module';
 import { StudentAuthModule } from './student-auth/student-auth.module';
 import { ProfessorAuthModule } from './professor-auth/professor-auth.module';
+import { HomeModule } from './home/home.module';
 @NgModule({
   declarations: [
     DashboardComponent
@@ -17,7 +18,8 @@ import { ProfessorAuthModule } from './professor-auth/professor-auth.module';
     ReactiveFormsModule,
     AdminAuthModule,
     StudentAuthModule,
-    ProfessorAuthModule
+    ProfessorAuthModule,
+    HomeModule
   ]
 })
 export class DashboardModule { }
