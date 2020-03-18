@@ -30,16 +30,12 @@ export class StudentListComponent implements OnInit {
 
   onClassSelect() {
     const data = this.listForm.get('class').value;
-    // this.getStudentByClass(this.attendanceForm.value.class);
     this.getStudentByClass(data);
-
-    console.log(data);
   }
 
   getStudentByClass(data) {
     this.studentService.getStudentByClass(data).subscribe((response: any) => {
       this.students = response.result;
-      console.log('response', response);
     });
   }
 }

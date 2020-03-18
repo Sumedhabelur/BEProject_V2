@@ -17,9 +17,8 @@ exports.registerAdmin = (req, res, next) => {
             res.status(201).json({
                 result: result
             })
-            console.log("sucess");
         })
         .catch((error) => {
-            console.log('error', error)
+
         });
 }

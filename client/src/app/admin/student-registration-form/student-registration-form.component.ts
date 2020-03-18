@@ -49,11 +49,9 @@ registerStudent() {
     dept: this.registerForm.get('dept').value
   };
   this.studentService.registerStudent(data).subscribe((response: any) => {
-    console.log('response', response);
     if (response.length > 0) {
       this.router.navigate(['/admin']);
     } else {
-      console.log('Registeration Failed');
       this.isRegisterFailed = true;
     }
 

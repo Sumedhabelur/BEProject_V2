@@ -15,11 +15,8 @@ exports.registerProfessor = async(req, res, next) => {
 
     const date = new Date(req.body.joiningDate);
     const year = date.getFullYear().toString();
-    //console.log('date', date)
-    //console.log('year', year)
     let result = await Professor.find();
-    let userName = '';
-    userName = 'P'+ year.slice(-2) + 'C' + result.length;
+    const userName = 'P'+ year.slice(-2) + 'C' + result.length;
     const professor = new Professor({
         email: req.body.email,
         pass: 'Random',
@@ -37,7 +34,7 @@ exports.registerProfessor = async(req, res, next) => {
             })
         })
         .catch((error) => {
-            console.log('error', error)
+            res.status(500).json(error)
         });
 }
 exports.updateProfessor = async (req, res, next) => {

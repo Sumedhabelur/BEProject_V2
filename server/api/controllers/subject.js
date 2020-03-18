@@ -14,12 +14,11 @@ exports.registerSubject = (req, res, next) => {
             })
         })
         .catch((error) => {
-            console.log('error', error)
+
         });
 }
 
 exports.updateSubject = async (req, res, next) => {
-    console.log('req', req)
 
     const ObjForUpdate = {
         subjectName: { $set: { subjectName: req.body.field } },
@@ -45,7 +44,6 @@ exports.getAllSubject = (req, res, next) => {
 }
 
 exports.getSubjectById = async (req, res, next) => {
-    console.log('req.params.id', req.params.id)
     Subject.find({ _id: req.params.id }).
         then(result => {
             res.status(200).json({ result });

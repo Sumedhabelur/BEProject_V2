@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class UploadNotesComponent implements OnInit {
 
-  uploadForm : FormGroup;
+  uploadForm: FormGroup;
   file;
   subjects = [];
   notes = [];
@@ -25,7 +25,7 @@ export class UploadNotesComponent implements OnInit {
 
   buildForm() {
     this.uploadForm = this.fb.group({
-      title: ['Topic Name',Validators.required],
+      title: ['Topic Name', Validators.required],
       class: ['None', Validators.required],
       subject: [undefined, Validators.required]
     });
@@ -33,18 +33,16 @@ export class UploadNotesComponent implements OnInit {
 
   onClassSelect() {
     const className = this.uploadForm.get('class').value;
-    console.log(className);
   }
 
   getSubjects(){
     this.professorService.getAllSubjects().subscribe((res: any) => {
       this.subjects = res.result;
-      console.log(this.subjects);
     });
   }
+
   onSubjectSelect() {
     const subjectName = this.uploadForm.get('subject').value;
-    console.log('Subject', subjectName);
   }
 
   onfileUpload(event) {
@@ -64,7 +62,4 @@ export class UploadNotesComponent implements OnInit {
       this.notes = res.result;
     });
   }
-
-
-
 }

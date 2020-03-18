@@ -39,7 +39,6 @@ export class SubjectAddComponent implements OnInit {
 
   addSubject() {
     this.subjectService.addSubject(this.subjectForm.value).subscribe((res: any) => {
-      console.log('res', res);
 
     });
   }

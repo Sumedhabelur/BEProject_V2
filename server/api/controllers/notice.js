@@ -10,7 +10,6 @@ exports.getNotice = async (req, res, next) => {
 }
 
 exports.uploadNotice = async (req, res, next) => {
-    console.log('req', req.body)
 
     path = req.file.path.replace('\\', '/');
     const notice = new Notice({

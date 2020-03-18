@@ -15,12 +15,11 @@ exports.registerClassroom = (req, res, next) => {
             })
         })
         .catch((error) => {
-            console.log('error', error)
+
         });
 }
 
 exports.updateClassroom = async (req, res, next) => {
-    console.log('req', req)
 
     const ObjForUpdate = {
         className : { $set: { className: req.body.field } } ,
@@ -46,7 +45,6 @@ exports.getAllClassroom = (req, res, next) => {
 }
 
 exports.getClassroomById = async (req, res, next) => {
-    console.log('req.params.id', req.params.id)
     Classroom.find({ _id: req.params.id }).
         then(result => {
             res.status(200).json({ result });

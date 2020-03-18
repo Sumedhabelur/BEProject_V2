@@ -10,7 +10,6 @@ exports.getNotes = async (req, res, next) => {
 }
 
 exports.uploadNote = async (req, res, next) => {
-    console.log('req', req.file)
 
     path = req.file.path.replace('\\', '/');
 
