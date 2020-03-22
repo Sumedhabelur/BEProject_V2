@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Router } from "@angular/router";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class ProfessorService {
 
@@ -22,20 +22,20 @@ export class ProfessorService {
     return this.http.get(`http://localhost:3000/professor/${professorId}`);
   }
 
-  uploadFile(data) {
-    return this.http.post("http://localhost:3000/note/upload", data);
+  uploadNote(data) {
+    return this.http.post(`http://localhost:3000/note/upload`, data);
   }
 
   uploadNotice(data) {
-    return this.http.post("http://localhost:3000/notice/upload", data);
+    return this.http.post(`http://localhost:3000/notice/upload`, data);
   }
 
   getNotes() {
-    return this.http.get("http://localhost:3000/note");
+    return this.http.get(`http://localhost:3000/note`);
   }
 
   getNotice() {
-    return this.http.get("http://localhost:3000/notice");
+    return this.http.get(`http://localhost:3000/notice`);
   }
 
   updateProfByField(professorId, updateType, fieldToUpdate) {
@@ -48,5 +48,5 @@ export class ProfessorService {
   getAllSubjects() {
     return this.http.get('http://localhost:3000/subject/');
   }
-  
+
 }
