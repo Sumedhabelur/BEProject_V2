@@ -22,7 +22,7 @@ export class UploadNotesComponent implements OnInit {
   ngOnInit() {
     this.buildForm();
     this.getSubjects();
-    this.getNotes();
+    // this.getNotes();
   }
 
   buildForm() {
@@ -40,11 +40,13 @@ export class UploadNotesComponent implements OnInit {
   getSubjects() {
     this.professorService.getAllSubjects().subscribe((res: any) => {
       this.subjects = res.result;
+      // console.log(this.subjects[0]._id);
     });
   }
 
   onSubjectSelect() {
     const subjectName = this.noteForm.get('subject').value;
+    // console.log("subjectName:",subjectName);
   }
 
   onfileUpload(event) {
@@ -54,13 +56,14 @@ export class UploadNotesComponent implements OnInit {
   getNotes() {
     this.professorService.getNotes().subscribe((res: any) => {
       this.notes = res.result;
+      // console.log(this.notes.subject);
     });
   }
 
   uploadNote() {
     this.getNoteData();
     this.professorService.uploadNote(this.formData).subscribe((response) => {
-      this.getNotes();
+      // this.getNotes();
     });
   }
 

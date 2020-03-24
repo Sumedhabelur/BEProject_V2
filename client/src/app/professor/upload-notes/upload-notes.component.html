@@ -34,9 +34,32 @@
           <input type="file" (change)="onfileUpload($event)">
         </div>
         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="uploadNote()">Upload</button>
-        <div class="form-group" *ngFor="let item of notes">
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="getNotes()">View Notes</button>
+        <!-- <div class="form-group" *ngFor="let item of notes">
           <label>Uploaded File Link</label>
           <a href="{{item.file}}"> {{item.file}}</a>
+        </div> -->
+        <div class="card-body">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Class</th>
+                <th scope="col">Uploaded Notes</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of notes;  let i = index">
+              <tr>
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.noteTitle}}</td>
+                <td>{{item.subject}}</td>
+                <td>{{item.class}}</td>
+                <td>{{item.file}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </form>
     </div>

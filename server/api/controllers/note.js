@@ -18,7 +18,7 @@ exports.uploadNote = async (req, res, next) => {
         noteTitle: req.body.noteTitle,
         class: req.body.class,
         subject: req.body.subject,
-        professor: req.body.professor
+        // professor: req.body.professor
     });
 
     note.save()
