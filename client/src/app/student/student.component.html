@@ -6,7 +6,8 @@
         Welcome Student..!!
       </div>
       <div class="col sub-heading">
-        Name of Student
+        {{student?.firstName}}
+        {{student?.lastName}}
       </div>
       <div class="column logout-btn">
         <button (click)="logout()" class="btn btn-danger" type="button">Logout</button>

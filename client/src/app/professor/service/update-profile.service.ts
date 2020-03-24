@@ -11,5 +11,4 @@ export class UpdateProfileService {
   getProfessorById(profId) {
     return this.http.get(`http://localhost:3000/professor/${profId}`);
   }
-  
 }

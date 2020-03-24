@@ -15,9 +15,9 @@ export class ProfessorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.professorService.getProfessorById( this.professorService.professorId).subscribe((professor: any) => {
-      this.professor = professor.result;
-    });
+    // this.professorService.getProfessorById( this.professorService.professorId).subscribe((professor: any) => {
+    //   this.professor = professor.result;
+    // });
   }
 
   logout() {

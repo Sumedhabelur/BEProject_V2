@@ -22,11 +22,11 @@ export class UpdateProfileComponent implements OnInit {
 
   buildForm() {
     this.detailForm = this.fb.group({
-      firstName: [""],
-      lastName: [""],
-      email: [""],
-      password: [""],
-      dob: [""],
+      firstName: [''],
+      lastName: [''],
+      email: [''],
+      password: [''],
+      dob: [''],
     });
   }
 

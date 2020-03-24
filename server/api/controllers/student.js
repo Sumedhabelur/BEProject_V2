@@ -72,13 +72,12 @@ exports.updateStudent = async (req, res, next) => {
         email: { $set: { email: req.body.field } },
         class: { $set: { class: req.body.field } },
         dob: { $set: { dob: req.body.field } },
-        typeOfAdmission: { $set: { typeOfAdmission: req.body.field } }
     }
     try {
         const result = await Student.update({ _id: req.params.id }, ObjForUpdate[req.body.updateType]);
         res.status(200).json({ result });
     } catch (error) {
-        res.status(500).json({ message: 'Internal Server Error' })
+        res.status(500).json(error)
     }
 
 }
@@ -103,8 +102,8 @@ exports.getStudentByClass = async (req, res, next) => {
 }
 
 exports.getStudentById = async (req, res, next) => {
-    Student.find({ _id: req.params.id }).
-        then(result => {
+    Student.findById(req.params.id )
+        .then(result => {
             res.status(200).json({ result });
         })
         .catch(err => {
