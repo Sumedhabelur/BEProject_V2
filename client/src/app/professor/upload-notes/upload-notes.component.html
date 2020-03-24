@@ -8,10 +8,10 @@
   <div class="form-group">
     <div class="card-body">
       <h5 class="register">Upload Notes</h5>
-      <form [formGroup]="uploadForm" class="form-register">
+      <form [formGroup]="noteForm" class="form-register">
         <div class="form-group">
           <label>Title</label>
-          <input type="text" class="form-control" formControlName="title" placeholder="Enter notes title Here" required autofocus>
+          <input type="text" class="form-control" formControlName="noteTitle" placeholder="Enter notes title Here" required autofocus>
         </div>
         <div class="form-group">
           <label>Class</label>
@@ -33,10 +33,33 @@
           <label>Browse File to upload</label><br>
           <input type="file" (change)="onfileUpload($event)">
         </div>
-        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="onfileUpload()">Upload</button>
-        <div class="form-group" *ngFor="let item of notes">
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="uploadNote()">Upload</button>
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="getNotes()">View Notes</button>
+        <!-- <div class="form-group" *ngFor="let item of notes">
           <label>Uploaded File Link</label>
           <a href="{{item.file}}"> {{item.file}}</a>
+        </div> -->
+        <div class="card-body">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Class</th>
+                <th scope="col">Uploaded Notes</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of notes;  let i = index">
+              <tr>
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.noteTitle}}</td>
+                <td>{{item.subject}}</td>
+                <td>{{item.class}}</td>
+                <td>{{item.file}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </form>
     </div>

@@ -14,7 +14,11 @@ exports.uploadNote = async (req, res, next) => {
     path = req.file.path.replace('\\', '/');
 
     const note = new Note({
-        file: `http://localhost:3000/${path}`
+        file: `http://localhost:3000/${path}`,
+        noteTitle: req.body.noteTitle,
+        class: req.body.class,
+        subject: req.body.subject,
+        // professor: req.body.professor
     });
 
     note.save()

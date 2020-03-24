@@ -9,57 +9,69 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class UploadNotesComponent implements OnInit {
 
-  uploadForm: FormGroup;
+  noteForm: FormGroup;
   file;
   subjects = [];
   notes = [];
+  formData = new FormData();
 
   constructor(
     private fb: FormBuilder,
-    private professorService: ProfessorService  ) { }
+    private professorService: ProfessorService) { }
 
   ngOnInit() {
     this.buildForm();
     this.getSubjects();
+    // this.getNotes();
   }
 
   buildForm() {
-    this.uploadForm = this.fb.group({
-      title: ['Topic Name', Validators.required],
+    this.noteForm = this.fb.group({
+      noteTitle: ['Topic Name', Validators.required],
       class: ['None', Validators.required],
       subject: [undefined, Validators.required]
     });
   }
 
   onClassSelect() {
-    const className = this.uploadForm.get('class').value;
+    const className = this.noteForm.get('class').value;
   }
 
-  getSubjects(){
+  getSubjects() {
     this.professorService.getAllSubjects().subscribe((res: any) => {
       this.subjects = res.result;
+      // console.log(this.subjects[0]._id);
     });
   }
 
   onSubjectSelect() {
-    const subjectName = this.uploadForm.get('subject').value;
+    const subjectName = this.noteForm.get('subject').value;
+    // console.log("subjectName:",subjectName);
   }
 
   onfileUpload(event) {
     this.file = event.target.files[0];
-
-    const formData = new FormData();
-    formData.append('note', this.file, this.file.name);
-
-    this.professorService.uploadFile(formData).subscribe((response) => {
-      this.getNotes();
-    });
-
   }
 
   getNotes() {
     this.professorService.getNotes().subscribe((res: any) => {
       this.notes = res.result;
+      // console.log(this.notes.subject);
     });
+  }
+
+  uploadNote() {
+    this.getNoteData();
+    this.professorService.uploadNote(this.formData).subscribe((response) => {
+      // this.getNotes();
+    });
+  }
+
+  getNoteData() {
+    this.formData.append('note', this.file, this.file.name);
+    this.formData.append('noteTitle', this.noteForm.get('noteTitle').value);
+    this.formData.append('class', this.noteForm.get('class').value);
+    this.formData.append('subject', this.noteForm.get('subject').value);
+    this.formData.append('professor', this.professorService.professorId);
   }
 }

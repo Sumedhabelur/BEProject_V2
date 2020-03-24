@@ -22,20 +22,20 @@ export class ProfessorService {
     return this.http.get(`http://localhost:3000/professor/${professorId}`);
   }
 
-  uploadFile(data) {
-    return this.http.post('http://localhost:3000/note/upload', data);
+  uploadNote(data) {
+    return this.http.post(`http://localhost:3000/note/upload`, data);
   }
 
   uploadNotice(data) {
-    return this.http.post('http://localhost:3000/notice/upload', data);
+    return this.http.post(`http://localhost:3000/notice/upload`, data);
   }
 
   getNotes() {
-    return this.http.get('http://localhost:3000/note');
+    return this.http.get(`http://localhost:3000/note`);
   }
 
   getNotice() {
-    return this.http.get('http://localhost:3000/notice');
+    return this.http.get(`http://localhost:3000/notice`);
   }
 
   updateProfByField(professorId, updateType, fieldToUpdate) {
