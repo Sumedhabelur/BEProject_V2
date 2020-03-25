@@ -33,7 +33,7 @@
           <label>Browse File to upload</label><br>
           <input type="file" (change)="onfileUpload($event)">
         </div>
-        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="uploadNote()">Upload</button>
+        <button [disabled]="noteForm.invalid" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="uploadNote()">Upload</button>
         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="getNotes()">View Notes</button>
         <!-- <div class="form-group" *ngFor="let item of notes">
           <label>Uploaded File Link</label>
