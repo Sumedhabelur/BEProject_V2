@@ -12,17 +12,18 @@ export class UploadNotesComponent implements OnInit {
   noteForm: FormGroup;
   file;
   subjects = [];
-  notes = [];
   formData = new FormData();
+  notes: any;
 
   constructor(
     private fb: FormBuilder,
-    private professorService: ProfessorService) { }
+    private professorService: ProfessorService
+  ) { }
 
   ngOnInit() {
     this.buildForm();
     this.getSubjects();
-    // this.getNotes();
+    this.getNotes();
   }
 
   buildForm() {
@@ -53,19 +54,14 @@ export class UploadNotesComponent implements OnInit {
     this.file = event.target.files[0];
   }
 
-  getNotes() {
-    this.professorService.getNotes().subscribe((res: any) => {
-      this.notes = res.result;
-      // console.log(this.notes.subject);
-    });
-  }
+
 
   uploadNote() {
     this.getNoteData();
     this.professorService.uploadNote(this.formData).subscribe((response) => {
-      this.getNotes();
       this.file = null;
       this.noteForm.reset();
+      this.getNotes();
     });
   }
 
@@ -75,5 +71,11 @@ export class UploadNotesComponent implements OnInit {
     this.formData.append('class', this.noteForm.get('class').value);
     this.formData.append('subject', this.noteForm.get('subject').value);
     this.formData.append('professor', this.professorService.professorId);
+  }
+
+  getNotes() {
+    this.professorService.getNotes().subscribe((res: any) => {
+      this.notes = res.result;
+    });
   }
 }
