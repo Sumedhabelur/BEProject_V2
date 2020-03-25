@@ -63,7 +63,9 @@ export class UploadNotesComponent implements OnInit {
   uploadNote() {
     this.getNoteData();
     this.professorService.uploadNote(this.formData).subscribe((response) => {
-      // this.getNotes();
+      this.getNotes();
+      this.file = null;
+      this.noteForm.reset();
     });
   }
 
