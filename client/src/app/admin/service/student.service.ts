@@ -5,6 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class StudentService {
+  studentId(studentId: any) {
+    throw new Error("Method not implemented.");
+  }
+  getStudentById(studentId: string) {
+    throw new Error("Method not implemented.");
+  }
+  updateStudByField(studentId: any, updateType: any, value: any) {
+    throw new Error("Method not implemented.");
+  }
 
   constructor(private http: HttpClient) {}
 

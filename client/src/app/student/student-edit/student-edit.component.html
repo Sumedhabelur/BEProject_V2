@@ -1,1 +1,35 @@
 <p>student-edit works!</p>
+<div class="background">
+    <div class="form-group">
+      <div class="card-body">
+        <h5 class="edit">Edit Profile</h5>
+        <form [formGroup]="detailForm" class="form-register">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name Here" required autofocus>
+            <button (click)="updateStud('firstName')" class="btn btn-sm btn-primary">Edit</button>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name Here" required autofocus>
+            <button (click)="updateStud('lastName')" class="btn btn-sm btn-primary">Edit</button>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="text" class="form-control" formControlName="email" placeholder="Enter Email address Here" required autofocus >
+            <button (click)="updateStud('email')" class="btn btn-sm btn-primary">Edit</button>
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="text" class="form-control" formControlName="dob" placeholder="Enter Date of Birth Here" required autofocus >
+            <button (click)="updateStud('dob')" class="btn btn-sm btn-primary">Edit</button>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter 8 character password" required autofocus >
+            <button (click)="updateStud('pass')" class="btn btn-sm btn-primary">Confirm</button>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>

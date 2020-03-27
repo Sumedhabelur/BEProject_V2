@@ -48,5 +48,4 @@ export class ProfessorService {
   getAllSubjects() {
     return this.http.get('http://localhost:3000/subject/');
   }
-
 }

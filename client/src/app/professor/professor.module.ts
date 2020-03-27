@@ -9,6 +9,7 @@ import { UploadNoticeComponent } from './upload-notice/upload-notice.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
 import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
+import { NotesListComponent } from './notes-list/notes-list.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ViewAttendanceComponent } from './view-attendance/view-attendance.compo
     UploadNoticeComponent,
     UpdateProfileComponent,
     TakeAttendanceComponent,
-    ViewAttendanceComponent
+    ViewAttendanceComponent,
+    NotesListComponent
   ],
   imports: [
     CommonModule,
