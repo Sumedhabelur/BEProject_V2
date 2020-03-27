@@ -72,6 +72,6 @@ export class UploadNotesComponent implements OnInit {
     this.formData.append('noteTitle', this.noteForm.get('noteTitle').value);
     this.formData.append('class', this.noteForm.get('class').value);
     this.formData.append('subject', this.noteForm.get('subject').value);
-    this.formData.append('professor', this.professorService.professorId);
+    // this.formData.append('professor', this.professorService.professorId);
   }
 }
