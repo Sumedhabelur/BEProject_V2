@@ -58,4 +58,22 @@ export class TakeAttendanceComponent implements OnInit {
       this.studentsIds.push(student._id);
     }
   }
+
+  submitAttendance() {
+    const data = {
+      class: this.attendanceForm.get('class').value,
+      subjectId: this.attendanceForm.get('subject').value,
+      studentsIds: this.studentsIds,
+      date: new Date()
+    };
+    this.studentAttendanceService.registerLecture(data).subscribe((response: any) => {
+      if (response.length > 0) {
+        console.log('Successful..!!');
+      } else {
+        console.log('Failed..!!');
+      }
+    });
+
+  }
+
 }

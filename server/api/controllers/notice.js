@@ -15,6 +15,8 @@ exports.uploadNotice = async (req, res, next) => {
     const notice = new Notice({
         file: `http://localhost:3000/${path}`,
         noticeTitle: req.body.noticeTitle,
+        notice: req.body.notice,
+        class: req.body.class
         // professor: req.body.professorId
     });
 

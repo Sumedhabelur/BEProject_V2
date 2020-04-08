@@ -17,4 +17,8 @@ export class StudentAttendanceService {
   getAllSubjects() {
     return this.http.get('http://localhost:3000/subject/');
   }
+
+  registerLecture(data) {
+    return this.http.post('http://localhost:3000/lecture/', data);
+  }
 }

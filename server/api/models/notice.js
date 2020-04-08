@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema({
     file: { type: String, required: true, },
     noticeTitle: { type: String, required: true },
+    notice: { type: String, required: true },
+    class: { type: String, required: true },
     // professor: { type: mongoose.Schema.Types.ObjectId, ref: 'Professor' }
 });
 
