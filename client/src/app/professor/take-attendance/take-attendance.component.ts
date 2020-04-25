@@ -35,14 +35,15 @@ export class TakeAttendanceComponent implements OnInit {
     const className = this.attendanceForm.get('class').value;
     this.getStudentByClass(className);
   }
+
   getSubjects() {
     this.studentAttendanceService.getAllSubjects().subscribe((res: any) => {
       this.subjects = res.result;
+      console.log('this.subjects', this.subjects)
     });
   }
-  onSubjectSelect() {
-    const subjectName = this.attendanceForm.get('subject').value;
-  }
+
+
   getStudentByClass(data) {
     this.studentAttendanceService.getStudentByClass(data).subscribe((response: any) => {
       this.students = response.result;
@@ -67,13 +68,10 @@ export class TakeAttendanceComponent implements OnInit {
       date: new Date()
     };
     this.studentAttendanceService.registerLecture(data).subscribe((response: any) => {
-      if (response.length > 0) {
-        console.log('Successful..!!');
-      } else {
-        console.log('Failed..!!');
-      }
+      console.log('Successful..!!')
+    }, (error) => {
+      console.log('error', error)
     });
-
   }
 
 }
