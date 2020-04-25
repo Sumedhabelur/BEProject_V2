@@ -11,9 +11,9 @@ exports.getNotice = async (req, res, next) => {
 
 exports.uploadNotice = async (req, res, next) => {
 
-    path = req.file.path.replace('\\', '/');
+    path = req.file ? req.file.path.replace('\\', '/') : '';
     const notice = new Notice({
-        file: `http://localhost:3000/${path}`,
+        file: path ? `http://localhost:3000/${path}` : '',
         noticeTitle: req.body.noticeTitle,
         notice: req.body.notice,
         class: req.body.class

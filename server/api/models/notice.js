@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema({
-    file: { type: String, required: true, },
+    file: { type: String },
     noticeTitle: { type: String, required: true },
     notice: { type: String, required: true },
     class: { type: String, required: true },

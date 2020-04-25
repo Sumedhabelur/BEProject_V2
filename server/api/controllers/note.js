@@ -12,6 +12,7 @@ exports.getNotes = async (req, res, next) => {
 exports.uploadNote = async (req, res, next) => {
 
     path = req.file.path.replace('\\', '/');
+    console.log('path', path)
 
     const note = new Note({
         file: `http://localhost:3000/${path}`,
