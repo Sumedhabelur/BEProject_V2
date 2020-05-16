@@ -1,4 +1,4 @@
-<div class="background">
+<!-- <div class="background">
   <div class="row">
     <img src="../../assets/images/logo.jpg" class="logo">
     <div class="column">
@@ -26,4 +26,39 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<!-- New Design -->
+
+<div class="row1" >
+  <div class="column0">
+      <img src="../assets/images/logo.jpg" class="logo">
+  </div>
+  <div class="column1" >
+    <h1 style = "font-size: 25px;;color:#053a4c">KEYSTONE<br>SCHOOL OF ENGINEERING</h1>
+  </div>
+  <div class="column2" >
+    <h1 style = "font-size: 25px;;color:#053a4c">By The Teachers, Of The Students
+      For The Society..!!
+    </h1>
+  </div>
+</div>
+<hr class="line">
+  <button (click)="selectAuthType('Home')" type="button" class="nav-button" style = "margin-left: 490px;">HOME</button>
+  <button (click)="selectAuthType('Admin')" type="button" class="nav-button">ADMIN</button>
+  <button (click)="selectAuthType('Professor')" type="button" class="nav-button">PROFESSOR</button>
+  <button (click)="selectAuthType('Student')" type="button" class="nav-button">STUDENT</button>
+<div class="pages" style="height: 700px;">
+<div class="col1">
+    <img src="../assets/images/Process.png" class="pic">
+</div>
+<div class="col2">
+  <app-home *ngIf="selectedType == 'Home'"></app-home>
+  <app-admin-login *ngIf="selectedType == 'Admin'"></app-admin-login>
+  <app-professor-login *ngIf="selectedType == 'Professor'"></app-professor-login>
+  <app-student-login *ngIf="selectedType == 'Student'"></app-student-login>
+</div>
+<div class="col3">
+    <img src="../assets/images/static.png" class="pic">
+</div>
 </div>

@@ -1,7 +1,7 @@
 <div class="background">
   <div class="form-group">
     <div class="card-body">
-      <h5 class="sign">Student Sign In</h5>
+      <h5 class="sign">STUDENT LOGIN</h5>
       <form [formGroup]="loginForm" class="form-signin">
         <div class="form-group">
           <label>Username</label>
@@ -13,11 +13,11 @@
           <input formControlName="pass" type="password" class="form-control" placeholder="Password" required />
         </div>
         <div class="checkbox">
-          <label class="float-right">
+          <label>
             <a routerLink="../forgetpass">Forgotten Password?</a>
           </label>
         </div>
-        <button [disabled]="loginForm.invalid" class="btn btn-lg btn-primary btn-block text-uppercase" (click)="onSubmitClick()">
+        <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="onSubmitClick()">
           Sign in
         </button>
         <span style="color: red;margin-left: 87px;" *ngIf="isLoginFailed">Invalid Credential</span>
