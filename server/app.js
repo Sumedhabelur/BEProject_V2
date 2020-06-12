@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
  const lectureRoutes = require("./api/routes/lecture");
  const noteRoutes = require("./api/routes/note");
  const noticeRoutes = require("./api/routes/notice");
- //const feeDetailsRoutes = require("./api/routes/feeDetails");
+ const feeDetailsRoutes = require("./api/routes/feeDetails");
  //const studentFeeRoutes = require("./api/routes/studentFee");
 
 
@@ -50,7 +50,7 @@ app.use("/subject",subjectRoutes);
 app.use("/lecture",lectureRoutes);
 app.use("/note",noteRoutes);
 app.use("/notice",noticeRoutes);
-//app.use("/feeDetails",feeDetailsRoutes);
+app.use("/feeDetails",feeDetailsRoutes);
 //app.use("/studentFee",studentFeeRoutes);
 
 
