@@ -83,22 +83,31 @@
 }
 
 .column1 {
-  background-color: whitesmoke;
+  /* background-color: whitesmoke;
   margin-top: -125px;
   height: 60px;
   width: 20%;
   margin-left: 219px;
   font-style: oblique;
   text-align: center;
-  border-radius: 16px;
+  border-radius: 16px; */
+
+  background-color: whitesmoke;
+    margin-top: -138px;
+    height: 85px;
+    width: 30%;
+    margin-left: 219px;
+    font-style: oblique;
+    text-align: center;
+    border-radius: 16px;
 }
 
 .column2 {
   background-color: whitesmoke;
-    margin-top: -61px;
-    width: 23%;
+  margin-top: -84px;
+  width: 23%;
     float: right;
-    height: 62px;
+    height: 85px;
     margin-right: 33px;
     font-style: oblique;
     text-align: center;
