@@ -7,7 +7,7 @@
 <div class="background">
   <div class="form-group">
     <div class="card-body">
-      <h5 class="register">Upload Notes</h5>
+      <h5 class="register">UPLOAD NOTES</h5>
       <form [formGroup]="noteForm" class="form-register">
         <div class="form-group">
           <label>Title</label>
@@ -31,11 +31,14 @@
         </div>
         <div class="form-group">
           <label>Browse File to upload</label><br>
-          <input type="file" (change)="onfileUpload($event)">
+          <input style = "background-color: #05394c;
+          height: 57px;
+          width: 100%;
+          padding: 10px;" type="file" (change)="onfileUpload($event)">
         </div>
-        <button [disabled]="noteForm.invalid" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="uploadNote()">Upload</button>
-        <app-notes-list [notes]=notes></app-notes-list>
+        <button [disabled]="noteForm.invalid" type="submit" (click)="uploadNote()">Upload</button>
       </form>
     </div>
   </div>
 </div>
+<app-notes-list [notes]=notes></app-notes-list>

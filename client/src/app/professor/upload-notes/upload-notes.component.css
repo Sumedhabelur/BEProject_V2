@@ -1,0 +1,41 @@
+.background {
+  width: 35%;
+  background-color: #78c5db;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.form-group {
+  text-align: center;
+  font-family: monospace;
+  color: white;
+  font-size: 23px;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+input , select {
+  height: 50px;
+    font-size: 23px;
+    text-align: center;
+}
+
+.register {
+  font-size: 28px;
+    text-decoration-line: underline;
+    margin-bottom: 30px;
+}
+
+button {
+  background-color: #05394c;
+    height: 60px;
+    width: 30%;
+    font-size: 25px;
+    font-family: monospace;
+    border-radius: 15px;
+    margin: auto;
+    color: white;
+    margin-bottom: 20px;
+}
