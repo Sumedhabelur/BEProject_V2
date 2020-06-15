@@ -1,17 +1,44 @@
 .background{
-  background-color: #6eaef3;
-  margin-left: 227px;
-  margin-top: 30px;
-  height: 950px;
-  width: 526px;
-  border-radius: 10px;
+  background-color: #78c5db;
+    width: 40%;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 23px;
+    text-align: center;
+    color: white;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .edit{
   color: white;
   text-align: center;
+  font-size: 30px;
+  text-decoration-line: underline;
+  margin-bottom: 45px;
 }
 
 .form-group{
-  margin-bottom: 2rem;
+  margin: auto;
+  width: 75%;
+  font-size: 25px;
 }
+
+input {
+  height: 50px;
+    font-size: 23px;
+    text-align: center;
+}
+
+button {
+  height: 40px;
+  width: 35%;
+  border-radius: 15px;
+    font-size: 20px;
+    margin-bottom: 35px;
+    margin-top: 15px;
+    background-color: #05394c;
+}
+
+

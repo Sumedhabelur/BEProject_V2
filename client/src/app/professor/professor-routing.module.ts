@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full', canActivate : [ProfessorGuard] },
   {
     path: 'dashboard', component: ProfessorComponent, canActivate : [ProfessorGuard], children: [
-      { path: '', redirectTo: 'notes', pathMatch: 'full' },
+      { path: '', redirectTo: 'updateprofile', pathMatch: 'full' },
       { path: 'notes', component: UploadNotesComponent },
       { path: 'notice', component: UploadNoticeComponent },
       { path: 'updateprofile', component: UpdateProfileComponent },
