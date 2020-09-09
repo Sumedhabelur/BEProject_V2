@@ -1,4 +1,4 @@
-.background {
+/* .background {
   background-image: url('../../assets/images/adminProfile.jpg');
   width: 1688px;
   height: 1337px;
@@ -62,4 +62,102 @@
 .sidebar
 {
   margin-top: 31px;
+} */
+
+.row1 {
+  background-color: #78c5db;
+  height: 137px;
+}
+
+.column0 {
+  background-color:#78c5db ;
+  width: 15%;
+  height: 185px;
+}
+
+.column1 {
+  background-color: #78c5db;
+  width: 55%;
+  height: 185px;
+  margin-top: -185px;
+  float: right;
+}
+
+.column2 {
+  background-color: #78c5db;
+  height: 185px;
+  width: 31%;
+  font-style: oblique;
+  margin-top: -185px;
+  margin-left: 269px;
+  font-size: 35px;
+  text-align: center;
+  color: aliceblue;
+}
+
+.logo {
+  height: 160px;
+    width: 88%;
+    margin-left: 20px;
+    margin-top: 13px;
+    border-radius: 120px;
+}
+
+img {
+  height: 185px;
+  width: 32%;
+  margin-left: 10px;
+}
+
+.line {
+  margin-top: 52px;
+  margin-bottom: 5px;
+  border: 25;
+  border-top: 5px solid #053a4c;
+}
+
+.line1{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border: 25;
+  border-top: 5px solid #053a4c;
+}
+
+.row2 {
+  height: 56px;
+}
+
+.nav-button {
+  height: 50px;
+  margin-left: 35px;
+  width: 12%;
+  font-family: monospace;
+  font-size: 23px;
+  color: aliceblue;
+  border-radius: 16px;
+  background-color: #05394c;
+}
+
+button:hover {
+  background-color: #78c5db;
+  color: #05394c;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #78c5db;
+  color: #05394c;
+  cursor: pointer;
+}
+
+h3 {
+  padding-top: 24px;
+  font-size: 50px;
+  color: #05394c;
+}
+
+h4 {
+  font-size: 40px;
+  color: #05394c;
+  text-decoration: underline;
 }

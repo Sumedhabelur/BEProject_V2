@@ -1,4 +1,4 @@
-<div class="background">
+<!-- <div class="background">
   <div class="row">
     <img src="../../assets/images/boy.jpg" class="profile">
     <div class="column">
@@ -10,21 +10,6 @@
       </div>
     </div>
   </div>
-  <!-- <hr class="line"> -->
-  <!-- <div class="row">
-    <div class="column">
-      <div class="sidebar" style="margin-top: 31px;">
-        <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student</button>
-        <button (click)="selectAuthType('Professor')" type="button" class="nav-button">Professor</button>
-        <button (click)="selectAuthType('Subject')" type="button" class="nav-button">Subject</button>
-      </div>
-    </div>
-    <div class="column">
-      <app-student *ngIf="selectedType == 'Student'"></app-student>
-      <app-professor *ngIf="selectedType == 'Professor'"></app-professor>
-      <app-subject *ngIf="selectedType == 'Subject'"></app-subject>
-    </div>
-  </div> -->
   <div class="row" style="margin-left: 324px;">
     <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student</button>
     <button (click)="selectAuthType('Professor')" type="button" class="nav-button">Professor</button>
@@ -37,4 +22,39 @@
       <app-professor *ngIf="selectedType == 'Professor'"></app-professor>
       <app-subject *ngIf="selectedType == 'Subject'"></app-subject>
   </div>
+</div> -->
+
+<div class="row1" >
+  <div class="column0">
+      <img src="../assets/images/cap.png" class="logo">
+  </div>
+  <div class="column1">
+      <img src="../assets/images/study.png">
+      <img src="../assets/images/scrum.png">
+      <img src="../assets/images/team.png">
+  </div>
+  <div class="column2">
+    <h3>Welcome</h3>
+    <h4>KSE ADMIN</h4>
+  </div>
 </div>
+<hr class="line">
+<div class="row2">
+  <!-- <button [routerLink]="['updateprofile']" type="button" class="nav-button">Profile</button>
+  <button [routerLink]="['notes']" type="button" class="nav-button">Notes</button>
+  <button [routerLink]="['notice']" type="button" class="nav-button">Notices</button>
+  <button [routerLink]="['takeattendance']" type="button" class="nav-button">Take Attendance</button>
+  <button [routerLink]="['viewattendance']" type="button" class="nav-button">View Attendance</button> -->
+  <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student</button>
+  <button (click)="selectAuthType('Professor')" type="button" class="nav-button">Professor</button>
+  <button (click)="selectAuthType('Subject')" type="button" class="nav-button">Subject</button>
+  <button type="button" class="nav-button">Notice</button>
+  <button type="button" class="nav-button">Attendance</button>
+  <button type="button" class="nav-button">Fee Details</button>
+  <button type="button" (click)="logout()" class="nav-button" style="background-color: #ff5722">Logout</button>
+</div>
+<hr class="line1">
+<app-student *ngIf="selectedType == 'Student'"></app-student>
+<app-professor *ngIf="selectedType == 'Professor'"></app-professor>
+<app-subject *ngIf="selectedType == 'Subject'"></app-subject>
+<router-outlet></router-outlet>
