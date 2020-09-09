@@ -1,1 +1,39 @@
-<p>view-attendance works!</p>
+<div class="form-group">
+  <div class="card-body">
+    <form [formGroup]="viewAttendanceForm" class="form-register">
+      <div class="form-group">
+        <label>Class</label>
+        <select (change)="onClassSelect()" formControlName="class" class="form-control">
+          <option>NONE</option>
+          <option>SE</option>
+          <option>TE</option>
+          <option>BE</option>
+        </select>
+      </div>
+       <!-- <button [disabled]="attendanceForm.invalid" (click)="onClassSelect()"
+        class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button> -->
+      </form>
+  </div>
+</div>
+<div class="card-body1">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Lecture Name</th>
+        <th scope="col">Class Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Students Present</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let lecture of lectures;  let i = index">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{lecture.subjectId}}</td>
+        <td>{{lecture.class}}</td>
+        <td>{{lecture.date}}</td>
+        <td *ngFor="let student of lecture.studentsId;  let i = index">{{student}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
