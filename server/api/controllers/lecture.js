@@ -6,7 +6,7 @@ exports.registerLecture = (req, res, next) => {
     const lecture = new Lecture({
         class: req.body.class,
         subjectId: req.body.subjectId,
-        studentsId: req.body.studentsId,
+        studentsId: req.body.studentsIds,
         date: date
     });
     lecture
