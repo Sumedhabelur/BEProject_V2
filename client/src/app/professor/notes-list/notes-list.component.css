@@ -1,0 +1,15 @@
+.card-body {
+  width: 75%;
+  margin: auto;
+}
+
+.table {
+  background-color: #78c5db;
+  text-align: center;
+  font-family: cursive;
+}
+
+.thead-dark {
+  font-size: 20px;
+}
+

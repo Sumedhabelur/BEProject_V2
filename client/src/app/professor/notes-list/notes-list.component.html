@@ -11,6 +11,7 @@
         <th scope="col">Subject</th>
         <th scope="col">Class</th>
         <th scope="col">Uploaded Notes</th>
+        <th></th>
       </tr>
     </thead>
     <tbody *ngFor="let item of notes;  let i = index">
@@ -20,6 +21,7 @@
         <td>{{item.subject}}</td>
         <td>{{item.class}}</td>
         <td>{{item.file}}</td>
+        <td><button style="border-radius: 15px;">Delete</button></td>
       </tr>
     </tbody>
   </table>
