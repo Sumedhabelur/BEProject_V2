@@ -12,4 +12,7 @@ export class AdminService {
     return this.http.get(`http://localhost:3000/notice/class/${data}`);
   }
 
+  getLectureByClass(data) {
+    return this.http.get(`http://localhost:3000/lecture/class/${data}`);
+  }
 }
