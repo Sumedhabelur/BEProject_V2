@@ -13,6 +13,9 @@ import { ProfessorListComponent } from './professor-list/professor-list.componen
 import { SubjectComponent } from './subject/subject.component';
 import { SubjectListComponent } from './subject-list/subject-list.component';
 import { SubjectAddComponent } from './subject-add/subject-add.component';
+import { NoticeComponent } from './notice/notice.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { FeeDetailsComponent } from './fee-details/fee-details.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { SubjectAddComponent } from './subject-add/subject-add.component';
     ProfessorListComponent,
     SubjectComponent,
     SubjectListComponent,
-    SubjectAddComponent
+    SubjectAddComponent,
+    NoticeComponent,
+    AttendanceComponent,
+    FeeDetailsComponent
   ],
   imports: [
     CommonModule,
