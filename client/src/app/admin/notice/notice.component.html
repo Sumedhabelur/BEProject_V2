@@ -1,1 +1,41 @@
-<p>notice works!</p>
+<div class="background">
+  <div class="form-group">
+    <div class="card-body">
+      <h5 class="notice" style="font-size: 25px;
+          text-decoration: underline;">Upload Notice</h5>
+        <form [formGroup]="noticeForm" class="form-notice">
+          <div class="form-group">
+            <label>Class</label>
+            <select (change)="onClassSelect()" formControlName="class" class="form-control">
+              <option>All</option>
+              <option>SE</option>
+              <option>TE</option>
+              <option>BE</option>
+            </select>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+<div class="card-body">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Notice Title</th>
+        <th scope="col">Class</th>
+        <th scope="col">Notice</th>
+        <th scope="col">Notice Link</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of notice  let i = index" style="background-color: #78c5db;">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.noticeTitle}}</td>
+        <td>{{item.class}}</td>
+        <td>{{item.notice}}</td>
+        <td>{{item.file}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
