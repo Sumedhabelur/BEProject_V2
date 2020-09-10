@@ -30,8 +30,9 @@
                     <th scope="col">Admission Date</th>
                     <th scope="col">Class</th>
                     <th scope="col">Username</th>
-                    <th scope="col">typeOfAdmission</th>
+                    <th scope="col">TypeOfAdmission</th>
                     <th scope="col">Dept</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody *ngFor="let student of students;  let i = index">
@@ -46,8 +47,6 @@
                     <td>{{student.userName}}</td>
                     <td>{{student.typeOfAdmission}}</td>
                     <td>{{student.dept}}</td>
-                    <td><button class="btn btn-warning" type="button">Edit</button>
-                    </td>
                     <td> <button class="btn btn-danger" type="button">Delete</button>
                     </td>
                   </tr>

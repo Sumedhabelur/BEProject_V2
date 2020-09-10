@@ -1,4 +1,29 @@
-label,strong
+/* label,strong
 {
   font-family: cursive;
+} */
+
+.card-body {
+  background-color: #a0d6e6;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    font-size: 20px;
+    font-family: monospace;
+    text-align: center;
+}
+
+strong {
+  font-size: 22px;
+}
+
+label {
+  color: white;
+    font-size: 23px;
+}
+
+select {
+  width: 25%;
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 25px;
 }
