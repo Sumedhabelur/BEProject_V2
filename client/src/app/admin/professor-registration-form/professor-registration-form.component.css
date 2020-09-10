@@ -1,8 +1,7 @@
-.background{
+/* .background{
   background-color: #6eaef3;
   margin-left: 227px;
   margin-top: 30px;
-  /* height: 950px; */
   width: 526px;
   border-radius: 10px;
 }
@@ -10,8 +9,49 @@
 .register{
   color: white;
   text-align: center;
+} */
+
+.background {
+  width: 50%;
+    margin: auto;
+    margin-top: 25px;
 }
 
-.form-group{
-  /* margin-bottom: 5rem; */
+h5 {
+  font-size: 25px;
+    color: white;
+    font-family: fangsong;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.card-body {
+  background-color: #05394c;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-family: fangsong;
+    border-radius: 40px;
+}
+
+input {
+  width: 55%;
+  margin: auto;
+  font-size: 21px;
+}
+
+label {
+  margin-top: 15px;
+}
+
+button {
+  width: 25%;
+    margin: auto;
+    margin-top: 40px;
+    background-color: #ff5722;
+    border-color: white;
+    font-size: 25px;
+    font-family: monospace;
+    border-radius: 20px;
 }

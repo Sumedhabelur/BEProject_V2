@@ -1,11 +1,4 @@
 <!-- <div class="row">
-  <button style="margin-left: 30px" (click)="type='list'" class="btn btn-primary" type="button">Subject List</button>
-  <button style="margin-left: 10px" (click)="type='add'" class="btn btn-primary" type="button">Subject Add</button>
-</div>
-<app-subject-list *ngIf="type == 'list'"></app-subject-list>
-<app-subject-add *ngIf="type == 'add'"></app-subject-add> -->
-
-<div class="row">
   <div class="column">
     <div class="sidebar" style="margin-top: 10px;
     position: relative;
@@ -19,4 +12,13 @@
     <app-subject-list *ngIf="type == 'list'"></app-subject-list>
     <app-subject-add *ngIf="type == 'add'"></app-subject-add>
   </div>
+</div> -->
+
+<div class="row1">
+  <button (click)="type='list'" class="btn btn-primary" type="button">Subject List</button>
+  <button (click)="type='add'" class="btn btn-primary" type="button">Subject Add</button>
+</div>
+<div class="row2">
+  <app-subject-list *ngIf="type == 'list'"></app-subject-list>
+  <app-subject-add *ngIf="type == 'add'"></app-subject-add>
 </div>

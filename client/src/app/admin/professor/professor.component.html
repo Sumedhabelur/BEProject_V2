@@ -1,12 +1,4 @@
 <!-- <div class="row">
-  <button style="margin-left: 30px" (click)="type='list'" class="btn btn-primary" type="button">professor List</button>
-  <button style="margin-left: 10px"(click)="type='form'" class="btn btn-primary" type="button">professor form</button>
-</div>
-
-<app-professor-list *ngIf="type == 'list'"></app-professor-list>
-<app-professor-registration-form *ngIf="type == 'form'"></app-professor-registration-form> -->
-
-<div class="row">
   <div class="column">
     <div class="sidebar" style="margin-top: 10px;
     position: relative;
@@ -20,4 +12,13 @@
     <app-professor-list *ngIf="type == 'list'"></app-professor-list>
     <app-professor-registration-form *ngIf="type == 'form'"></app-professor-registration-form>
   </div>
+</div> -->
+
+<div class="row1">
+  <button (click)="type='list'" class="btn btn-primary" type="button">Professor List</button>
+  <button (click)="type='form'" class="btn btn-primary" type="button">Professor Register</button>
+</div>
+<div class="row2">
+  <app-professor-list *ngIf="type == 'list'"></app-professor-list>
+  <app-professor-registration-form *ngIf="type == 'form'"></app-professor-registration-form>
 </div>

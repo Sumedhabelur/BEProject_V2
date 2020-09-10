@@ -18,6 +18,7 @@
                     <th scope="col">DOB</th>
                     <th scope="col">Joining Date</th>
                     <th scope="col">Username</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody *ngFor="let professor of professors;  let i = index">
@@ -29,8 +30,6 @@
                     <td>{{professor.dob}}</td>
                     <td>{{professor.joiningDate}}</td>
                     <td>{{professor.userName}}</td>
-                    <td><button class="btn btn-warning" type="button">Edit</button>
-                    </td>
                     <td> <button class="btn btn-danger" type="button">Delete</button>
                     </td>
                   </tr>
