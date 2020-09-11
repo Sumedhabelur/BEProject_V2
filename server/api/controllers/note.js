@@ -34,6 +34,16 @@ exports.uploadNote = async (req, res, next) => {
         });
 }
 
+exports.getNoticeByClass = async (req, res, next) => {
+    Note.find({class: req.params.class })
+        .then(result => {
+            res.status(200).json({ result });
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'Internal Server Error' })
+        })
+}
+
 exports.deleteNote = (req, res, next) => {
 
 }

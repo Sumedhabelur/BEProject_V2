@@ -32,5 +32,6 @@ const upload = multer({
 router.get('/', NoteController.getNotes);
 router.post('/upload', upload.single('note'), NoteController.uploadNote);
 router.post('/delete', NoteController.deleteNote);
+router.get('/class/:class', multer().single(), NoteController.getNoticeByClass);
 
 module.exports = router;
