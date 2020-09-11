@@ -27,4 +27,9 @@ export class StudentService {
       field: fieldToUpdate
     });
   }
+
+  getNoticeByClass(data) {
+    return this.http.get(`http://localhost:3000/notice/class/${data}`);
+  }
+  
 }
