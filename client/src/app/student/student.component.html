@@ -1,4 +1,4 @@
-<div class="background">
+<!-- <div class="background">
   <div class="row">
     <img src="../../assets/images/boy.jpg" class="profile">
     <div class="column">
@@ -29,4 +29,36 @@
       <router-outlet></router-outlet>
     </div>
   </div>
+</div> -->
+
+<div class="row1" >
+  <div class="column0">
+      <img src="../assets/images/cap.png" class="logo">
+  </div>
+  <div class="column1">
+      <img src="../assets/images/study.png">
+      <img src="../assets/images/scrum.png">
+      <img src="../assets/images/team.png">
+  </div>
+  <div class="column2">
+    <h3>Welcome</h3>
+    <h4>{{student?.firstName}}
+      {{student?.lastName}}</h4>
+  </div>
 </div>
+<hr class="line">
+<div class="row2">
+  <!-- <button [routerLink]="['updateprofile']" type="button" class="nav-button">Profile</button>
+  <button [routerLink]="['notes']" type="button" class="nav-button">Notes</button>
+  <button [routerLink]="['notice']" type="button" class="nav-button">Notices</button>
+  <button [routerLink]="['takeattendance']" type="button" class="nav-button">Take Attendance</button>
+  <button [routerLink]="['viewattendance']" type="button" class="nav-button">View Attendance</button>
+  <button type="button" class="nav-button">Fee Details</button> -->
+  <button type="button" class="nav-button">Edit Profile</button>
+  <button type="button" class="nav-button">Notices</button>
+  <button type="button" class="nav-button">Notes</button>
+  <button type="button" class="nav-button">Fee Details</button>
+  <button type="button" (click)="logout()" class="nav-button" style="background-color: #ff5722">Logout</button>
+</div>
+<hr class="line1">
+<router-outlet></router-outlet>
