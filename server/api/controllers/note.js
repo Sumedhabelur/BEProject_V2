@@ -34,7 +34,7 @@ exports.uploadNote = async (req, res, next) => {
         });
 }
 
-exports.getNoticeByClass = async (req, res, next) => {
+exports.getNoteByClass = async (req, res, next) => {
     Note.find({class: req.params.class })
         .then(result => {
             res.status(200).json({ result });

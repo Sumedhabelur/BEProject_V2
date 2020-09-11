@@ -31,5 +31,9 @@ export class StudentService {
   getNoticeByClass(data) {
     return this.http.get(`http://localhost:3000/notice/class/${data}`);
   }
-  
+
+  getNoteByClass(data) {
+    return this.http.get(`http://localhost:3000/note/class/${data}`);
+  }
+
 }
