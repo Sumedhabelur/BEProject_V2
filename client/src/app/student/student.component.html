@@ -54,10 +54,10 @@
   <button [routerLink]="['takeattendance']" type="button" class="nav-button">Take Attendance</button>
   <button [routerLink]="['viewattendance']" type="button" class="nav-button">View Attendance</button>
   <button type="button" class="nav-button">Fee Details</button> -->
-  <button type="button" class="nav-button">Edit Profile</button>
-  <button type="button" class="nav-button">Notices</button>
-  <button type="button" class="nav-button">Notes</button>
-  <button type="button" class="nav-button">Fee Details</button>
+  <button [routerLink]="['updateprofile']" type="button" class="nav-button">Edit Profile</button>
+  <button [routerLink]="['notice']" type="button" class="nav-button">Notices</button>
+  <button [routerLink]="['notes']" type="button" class="nav-button">Notes</button>
+  <button [routerLink]="['feeDetails']" type="button" class="nav-button">Fee Details</button>
   <button type="button" (click)="logout()" class="nav-button" style="background-color: #ff5722">Logout</button>
 </div>
 <hr class="line1">
