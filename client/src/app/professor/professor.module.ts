@@ -10,6 +10,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
 import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
 import { NotesListComponent } from './notes-list/notes-list.component';
+import { FeeDetailsComponent } from './fee-details/fee-details.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NotesListComponent } from './notes-list/notes-list.component';
     UpdateProfileComponent,
     TakeAttendanceComponent,
     ViewAttendanceComponent,
-    NotesListComponent
+    NotesListComponent,
+    FeeDetailsComponent
   ],
   imports: [
     CommonModule,

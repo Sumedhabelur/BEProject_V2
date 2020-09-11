@@ -7,6 +7,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
 import { ViewAttendanceComponent } from './view-attendance/view-attendance.component';
 import { ProfessorGuard } from './professor-guard/professor.guard';
+import { FeeDetailsComponent } from './fee-details/fee-details.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'updateprofile', component: UpdateProfileComponent },
       { path: 'takeattendance', component: TakeAttendanceComponent },
       { path: 'viewattendance', component: ViewAttendanceComponent },
+      { path: 'feeDetails', component: FeeDetailsComponent },
     ]
   },
 
