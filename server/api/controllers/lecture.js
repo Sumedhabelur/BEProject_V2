@@ -57,7 +57,7 @@ exports.getLectureById = async (req, res, next) => {
 }
 
 exports.getLectureByClass = async (req, res, next) => {
-    Lecture.find({class: req.params.class })
+    Lecture.find({class: req.params.class }).populate('subjectId')
         .then(result => {
             res.status(200).json({ result });
         })

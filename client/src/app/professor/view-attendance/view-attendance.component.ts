@@ -19,6 +19,7 @@ export class ViewAttendanceComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+    this.onClassSelect();
   }
 
   buildForm() {
@@ -34,6 +35,7 @@ export class ViewAttendanceComponent implements OnInit {
 
   getLectureByClass(data) {
     this.studentAttendanceService.getLectureByClass(data).subscribe((response: any) => {
+      console.log('response', response)
       this.lectures = response.result;
     });
   }
