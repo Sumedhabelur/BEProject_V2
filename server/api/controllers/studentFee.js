@@ -3,6 +3,8 @@ const StudentFee = require("../models/studentFee");
 
 exports.registerFees = async (req, res, next) => {
 
+    console.log(req.body.studentId);
+    const balanceFee = 70000 - req.body.payment1 - ( req.body.payment2?req.body.payment2:0);
     const studentFee = new StudentFee({
         studentId: req.body.studentId,
         class: req.body.class,
@@ -11,8 +13,9 @@ exports.registerFees = async (req, res, next) => {
         payment2: req.body.payment2,
         date2: req.body.date2,
         totalFee: 70000,
-        balanceFee: 70000 - req.body.payment1 - req.body.payment2
+        balanceFee: balanceFee
     });
+    console.log(studentFee);
     studentFee
         .save()
         .then((result) => {
@@ -21,7 +24,9 @@ exports.registerFees = async (req, res, next) => {
             })
         })
         .catch((error) => {
-
+            res.status(500).json({
+                error: error
+            })
         });
 }
 

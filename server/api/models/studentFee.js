@@ -5,8 +5,8 @@ const Schema = mongoose.Schema({
     class: { type: String, required: true },
     payment1: { type: Number, required: true },
     date1: { type: Date, required: true},
-    payment2: { type: Number, required: true },
-    date2: { type: Date, required: true},
+    payment2: { type: Number},
+    date2: { type: Date},
     totalFee: { type: Number, required: true },
     balanceFee: { type: Number, required: true}
 });

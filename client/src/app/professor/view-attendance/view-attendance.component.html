@@ -10,12 +10,14 @@
           <option>BE</option>
         </select>
       </div>
-      </form>
+    </form>
   </div>
 </div>
 <div class="viewBtn">
-<button (click)="viewStudent()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">View Students</button>
-<button (click)="closeStudent()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Close Students</button>
+  <button (click)="toggleStudentView()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
+  {{isView?'Close Students':'View Students'}}</button>
+  <!-- <button (click)="closeStudent()" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Close
+    Students</button> -->
 </div>
 <div class="card-body1">
   <table class="table">
@@ -37,11 +39,11 @@
         <td>{{lecture.date | date: 'dd/mm/yyyy'}}</td>
         <td>{{lecture.studentsId.length}}</td>
       </tr>
-      <tr *ngIf="isView && !isClose" >
-      <div class="studentsList">
-      <h5>Username of Students Present</h5>
-      <div *ngFor="let student of lecture.studentsId;  let i = index">{{student.userName}}</div>
-      </div>
+      <tr *ngIf="isView && lecture.studentsId.length">
+        <div class="studentsList">
+          <h5>Username of Students Present</h5>
+          <div *ngFor="let student of lecture.studentsId;  let i = index">{{student.userName}}</div>
+        </div>
       </tr>
     </tbody>
   </table>

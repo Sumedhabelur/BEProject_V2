@@ -12,7 +12,7 @@ export class ViewAttendanceComponent implements OnInit {
   viewAttendanceForm: FormGroup;
   lectures = [];
   isView = false;
-  isClose = false;
+  // isClose = false;
 
   constructor(
     private fb: FormBuilder,
@@ -42,11 +42,11 @@ export class ViewAttendanceComponent implements OnInit {
     });
   }
 
-  viewStudent() {
-    this.isView = true;
+  toggleStudentView() {
+    this.isView = !this.isView;
   }
 
-  closeStudent() {
-    this.isClose = true;
-  }
+  // closeStudent() {
+  //   this.isClose = true;
+  // }
 }
