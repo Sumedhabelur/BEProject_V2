@@ -35,7 +35,7 @@ exports.uploadNote = async (req, res, next) => {
 }
 
 exports.getNoteByClass = async (req, res, next) => {
-    Note.find({class: req.params.class })
+    Note.find({class: req.params.class }).populate("subject")
         .then(result => {
             res.status(200).json({ result });
         })
