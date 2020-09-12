@@ -7,3 +7,5 @@ router.post('/register', multer().single(), StudentFeeController.registerFees);
 router.put('/update/:id', multer().single(), StudentFeeController.updateFees);
 router.get('/', multer().single(), StudentFeeController.getAllFees);
 router.get('/:id', multer().single(), StudentFeeController.getFeesById);
+
+module.exports = router;

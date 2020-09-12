@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const StudentFee = require("../models/studentFee");
 
-exports.registerFees = async(req, res, next) => {
+exports.registerFees = async (req, res, next) => {
 
     const studentFee = new StudentFee({
         studentId: req.body.studentId,
@@ -14,13 +14,25 @@ exports.registerFees = async(req, res, next) => {
         balanceFee: 70000 - req.body.payment1 - req.body.payment2
     });
     studentFee
-    .save()
-    .then((result) => {
-        res.status(201).json({
-            result: result
+        .save()
+        .then((result) => {
+            res.status(201).json({
+                result: result
+            })
         })
-    })
-    .catch((error) => {
+        .catch((error) => {
 
-    });
+        });
+}
+
+exports.updateFees = async (req, res, next) => {
+
+}
+
+exports.getAllFees = async (req, res, next) => {
+
+}
+
+exports.getFeesById = async (req, res, next) => {
+
 }
