@@ -11,19 +11,19 @@
             <option>BE</option>
           </select>
         </div>
-         <!-- <button [disabled]="attendanceForm.invalid" (click)="onClassSelect()"
+        <!-- <button [disabled]="attendanceForm.invalid" (click)="onClassSelect()"
           class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button> -->
-          <div>
-            <label>Select Subject</label>
-              <select (change)="onClassSelect()" formControlName="subject" class="form-control">
-                  <option *ngIf="subjects.length==0">No subjects found</option>
-                  <option [value]="item._id" *ngFor="let item of subjects">{{item.subjectName}}</option>
-              </select>
-          </div>
-        </form>
+        <div>
+          <label>Select Subject</label>
+          <select (change)="onClassSelect()" formControlName="subject" class="form-control">
+            <option *ngIf="subjects.length==0">No subjects found</option>
+            <option [value]="item._id" *ngFor="let item of subjects">{{item.subjectName}}</option>
+          </select>
+        </div>
+      </form>
     </div>
   </div>
-<!-- <button [disabled]="attendanceForm.invalid" (click)="onSubjectSelect()"
+  <!-- <button [disabled]="attendanceForm.invalid" (click)="onSubjectSelect()"
 class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button> -->
 
   <div class="card-body1">
@@ -50,6 +50,6 @@ class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</bu
       </tbody>
     </table>
   </div>
-<button class = "attend-btn" (click)="submitAttendance()">Submit Attendance</button>
+  <button class="attend-btn" (click)="submitAttendance()">Submit Attendance</button>
 
 </div>

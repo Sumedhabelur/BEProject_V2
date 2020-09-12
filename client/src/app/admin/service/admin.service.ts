@@ -15,4 +15,8 @@ export class AdminService {
   getLectureByClass(data) {
     return this.http.get(`http://localhost:3000/lecture/class/${data}`);
   }
+
+  getStudentByClass(data) {
+    return this.http.get(`http://localhost:3000/student/class/${data}`);
+  }
 }
