@@ -23,7 +23,7 @@ select {
 }
 
 table {
-  width: 90%;
+  width: 54%;
     margin-bottom: 1rem;
     color: #212529;
     text-align: center;
@@ -38,4 +38,16 @@ button {
   width: 30%;
   background-color: #05394c;
   margin: auto;
+}
+
+.viewBtn {
+  width: 36%;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
+.studentsList {
+  background-color: #05394c;
+  width: 313%;
+  color: white;
 }
