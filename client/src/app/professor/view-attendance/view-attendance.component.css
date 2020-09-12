@@ -33,3 +33,9 @@ table {
     margin: auto;
     margin-bottom: 25px;
 }
+
+button {
+  width: 30%;
+  background-color: #05394c;
+  margin: auto;
+}

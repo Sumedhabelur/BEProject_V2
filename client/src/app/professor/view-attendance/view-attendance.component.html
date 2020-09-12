@@ -33,10 +33,14 @@
         <td>{{lecture.class}}</td>
         <td>{{lecture.date | date: 'dd/mm/yyyy'}}</td>
         <td>{{lecture.studentsId.length}}</td>
-        <td><button (click)="viewStudent()"
-          class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">View</button></td>
+        <td>
+          <button (click)="viewStudent()"
+          class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">View</button>
+          <button (click)="closeStudent()"
+          class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Close</button>
+        </td>
       </tr>
-      <tr *ngIf="isView">
+      <tr *ngIf="isView && !isClose">
       <td *ngFor="let student of lecture.studentsId;  let i = index">{{student.firstName}},</td>
       </tr>
     </tbody>
