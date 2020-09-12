@@ -11,7 +11,7 @@ export class ViewAttendanceComponent implements OnInit {
 
   viewAttendanceForm: FormGroup;
   lectures = [];
-
+  isView = false;
   constructor(
     private fb: FormBuilder,
     private studentAttendanceService: StudentAttendanceService
@@ -38,6 +38,10 @@ export class ViewAttendanceComponent implements OnInit {
       console.log('response', response)
       this.lectures = response.result;
     });
+  }
+
+  viewStudent() {
+    this.isView = true;
   }
 
 }

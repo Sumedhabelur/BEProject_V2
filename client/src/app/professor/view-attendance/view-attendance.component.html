@@ -22,6 +22,8 @@
         <th scope="col">Class Name</th>
         <th scope="col">Date</th>
         <th scope="col">Students Present</th>
+        <th scope="col">Students Name</th>
+        <th></th>
       </tr>
     </thead>
     <tbody *ngFor="let lecture of lectures;  let i = index">
@@ -29,8 +31,13 @@
         <th scope="row">{{i+1}}</th>
         <td>{{lecture.subjectId.subjectName}}</td>
         <td>{{lecture.class}}</td>
-        <td>{{lecture.date}}</td>
-        <td *ngFor="let student of lecture.studentsId;  let i = index">{{student}}</td>
+        <td>{{lecture.date | date: 'dd/mm/yyyy'}}</td>
+        <td>{{lecture.studentsId.length}}</td>
+        <td><button (click)="viewStudent()"
+          class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">View</button></td>
+      </tr>
+      <tr *ngIf="isView">
+      <td *ngFor="let student of lecture.studentsId;  let i = index">{{student.firstName}},</td>
       </tr>
     </tbody>
   </table>
