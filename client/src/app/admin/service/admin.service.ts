@@ -19,4 +19,8 @@ export class AdminService {
   getStudentByClass(data) {
     return this.http.get(`http://localhost:3000/student/class/${data}`);
   }
+
+  registerFees(data) {
+    return this.http.post('http://localhost:3000/studentFee/register', data);
+  }
 }

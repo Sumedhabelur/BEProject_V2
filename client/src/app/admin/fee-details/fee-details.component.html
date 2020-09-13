@@ -44,7 +44,7 @@
           </div>
           <div class="form-group">
             <label>First Semester Payment</label>
-            <input type="number" class="form-control" formControlName="sem1" placeholder="50000" required autofocus>
+            <input type="number" class="form-control" formControlName="payment1" placeholder="50000" required autofocus>
           </div>
           <div class="form-group">
             <label>First Payment Date</label>
@@ -52,7 +52,7 @@
           </div>
           <div class="form-group">
             <label>Second Semester Payment</label>
-            <input type="number" class="form-control" formControlName="sem2" placeholder="Eg 30000" required autofocus >
+            <input type="number" class="form-control" formControlName="payment2" placeholder="Eg 30000" required autofocus >
           </div>
           <div class="form-group">
             <label>Second Payment Date</label>
@@ -60,11 +60,11 @@
           </div>
           <div>
             <label>Total Fees</label>
-            <input type="number" class="form-control" formControlName="totalfees" placeholder="Eg 70000" required autofocus >
+            <input type="number" class="form-control" formControlName="totalFee" placeholder="Eg 70000" required autofocus >
           </div>
           <div>
             <label>Balance Fees</label>
-            <input type="number" class="form-control" formControlName="balancefees" placeholder="Eg 10000" required autofocus >
+            <input type="number" class="form-control" formControlName="balanceFee" placeholder="Eg 10000" required autofocus >
           </div>
           <button class = "feeButton" type="submit" (click)="onRegisterClick()">Add Fee Details</button>
           <span style="color: red;margin-left: 87px;" *ngIf="isRegisterFailed">Invalid Credential</span>
