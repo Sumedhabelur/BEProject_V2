@@ -1,0 +1,79 @@
+.studentlist {
+  width: 50%;
+}
+
+.feeform {
+  width: 50%;
+  float: right;
+  position: absolute;
+  top: 264px;
+  right: 0px;
+}
+
+select {
+  width: 35%;
+  margin: auto;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+.form-studentlist {
+  width: 70%;
+    margin: auto;
+    background-color: #78c5db;
+    text-align: center;
+    font-family: monospace;
+    color: white;
+    height: 125px;
+    border-radius: 12px;
+    font-size: 21px;
+}
+
+table {
+  width: 70%;
+    background-color: #78c5db;
+    margin: auto;
+    font-family: monospace;
+    font-size: 18px;
+    text-align: center;
+}
+
+.form-register {
+  width: 80%;
+  font-size: 21px;
+  font-family: monospace;
+  color: white;
+  text-align: center;
+  margin: auto;
+  background-color: #05394c;
+  height: 1000px;
+  border-radius: 40px;
+}
+
+label {
+  margin-top: 30px;
+}
+
+input {
+  width: 50%;
+    margin: auto;
+    font-size: 21px;
+    text-align: center;
+}
+
+.feeButton {
+  background-color: #78c5db;
+    width: 35%;
+    margin: auto;
+    margin-top: 35px;
+}
+
+h5 {
+  text-align: center;
+    font-size: 27px;
+    font-family: monospace;
+    text-decoration: underline;
+    font-weight: 600;
+    color: #05394c;
+    margin-top: 45px;
+}
