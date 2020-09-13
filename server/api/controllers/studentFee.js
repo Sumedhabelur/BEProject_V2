@@ -58,7 +58,17 @@ exports.getAllFees = async (req, res, next) => {
 }
 
 exports.getFeesByClass = async (req, res, next) => {
-    StudentFee.find({class: req.params.class })
+    StudentFee.find({class: req.params.class }).populate("studentId")
+        .then(result => {
+            res.status(200).json({ result });
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'Internal Server Error' })
+        })
+}
+
+exports.getFeeById = async (req, res, next) => {
+    StudentFee.findById(req.params.id )
         .then(result => {
             res.status(200).json({ result });
         })

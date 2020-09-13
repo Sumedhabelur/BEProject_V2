@@ -23,4 +23,20 @@ export class AdminService {
   registerFees(data) {
     return this.http.post('http://localhost:3000/studentFee/register', data);
   }
+
+  getFeesByClass(data) {
+    return this.http.get(`http://localhost:3000/studentFee/class/${data}`);
+  }
+
+  updateFee(feeId, updateType, fieldToUpdate) {
+    return this.http.put(`http://localhost:3000/studentFee/update/${feeId}`, {
+      updateType,
+      field: fieldToUpdate
+    });
+  }
+
+  getFeeById(feeId) {
+    return this.http.get(`http://localhost:3000/studentFee/${feeId}`);
+  }
 }
+

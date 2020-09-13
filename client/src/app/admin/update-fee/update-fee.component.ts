@@ -10,11 +10,11 @@ import { AdminService } from '../service/admin.service';
 export class UpdateFeeComponent implements OnInit {
 
   feeForm: FormGroup;
-  students = [];
+  fees = [];
   addFeeForm: FormGroup;
   isUpdateFailed = false;
   isViewForm = false;
-  studentId;
+  feeId;
 
   constructor(
     private fb: FormBuilder,
@@ -35,52 +35,63 @@ export class UpdateFeeComponent implements OnInit {
       date1: ['', Validators.required],
       payment2: ['', Validators.required],
       date2: ['', Validators.required],
+      totalFee: ['70000', Validators.required],
+      balanceFee: ['', Validators.required],
     });
   }
 
   onClassSelect() {
     const className = this.feeForm.get('class').value;
-    this.getStudentByClass(className);
+    this.getFeesByClass(className);
   }
 
-  getStudentByClass(data) {
-    this.adminService.getStudentByClass(data).subscribe((response: any) => {
-      this.students = response.result;
+  getFeesByClass(data) {
+    this.adminService.getFeesByClass(data).subscribe((response: any) => {
+      this.fees = response.result;
     });
-    console.log(this.students);
+    console.log(this.fees);
   }
 
-  editStudentFee(student) {
-    console.log(student._id);
-    this.studentId = student._id;
+  editStudentFee(fee) {
+    console.log(fee._id);
+    this.feeId = fee._id;
     this.isViewForm = true;
-    this.addFeeForm.get('userName').setValue(student.userName);
+    this.addFeeForm.get('userName').setValue(fee.studentId.userName);
+    this.addFeeForm.get('payment1').setValue(fee.payment1);
+    this.addFeeForm.get('date1').setValue(fee.date1);
+    this.addFeeForm.get('payment2').setValue(fee.payment2);
+    this.addFeeForm.get('date2').setValue(fee.date2);
+    this.addFeeForm.get('totalFee').setValue(fee.totalFee);
+    this.addFeeForm.get('balanceFee').setValue(fee.balanceFee);
   }
 
-  onUpdateClick() {
-    console.log('In update Fee !!');
-    const data = {
-      studentId: this.studentId,
-      class: this.feeForm.get('class').value,
-      payment1: this.addFeeForm.get('payment1').value,
-      date1: this.addFeeForm.get('date1').value,
-      payment2: this.addFeeForm.get('payment2').value,
-      date2: this.addFeeForm.get('date2').value,
-      totalFee: this.addFeeForm.get('totalFee').value,
-      balanceFee: this.addFeeForm.get('balanceFee').value,
-    };
-    this.adminService.registerFees(data).subscribe((response: any) => {
-      console.log(response);
-      if (response) {
-        console.log('Successful');
-      } else {
-        this.isUpdateFailed = true;
-      }
+  // onUpdateClick() {
+  //   console.log('In update Fee !!');
+  //   const data = {
+  //     feeId: this.feeId,
+  //     class: this.feeForm.get('class').value,
+  //     payment1: this.addFeeForm.get('payment1').value,
+  //     date1: this.addFeeForm.get('date1').value,
+  //     payment2: this.addFeeForm.get('payment2').value,
+  //     date2: this.addFeeForm.get('date2').value,
+  //     totalFee: this.addFeeForm.get('totalFee').value,
+  //     balanceFee: this.addFeeForm.get('balanceFee').value,
+  //   };
+  //   this.adminService.registerFees(data).subscribe((response: any) => {
+  //     console.log(response);
+  //     if (response) {
+  //       console.log('Successful');
+  //     } else {
+  //       this.isUpdateFailed = true;
+  //     }
 
-    });
-  }
+  //   });
+  // }
 
   updateFee(updateType) {
-
-  }
+      this.adminService.updateFee(this.feeId, updateType, this.addFeeForm.get(updateType).value )
+        .subscribe((res: any) => {
+          console.log(this.feeId.payment2);
+        });
+    }
 }

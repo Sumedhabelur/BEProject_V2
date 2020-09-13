@@ -23,12 +23,12 @@
         <th scope="col">Fee Details</th>
       </tr>
     </thead>
-    <tbody *ngFor="let student of students;  let i = index">
+    <tbody *ngFor="let fee of fees;  let i = index">
       <tr>
         <th scope="row">{{i+1}}</th>
-        <td>{{student.firstName}}</td>
-        <td>{{student.lastName}}</td>
-        <td><input type="button" value = "Edit" (click) = "editStudentFee(student)" name="edit"></td>
+        <td>{{fee.studentId.firstName}}</td>
+        <td>{{fee.studentId.lastName}}</td>
+        <td><input type="button" value = "Edit" (click) = "editStudentFee(fee)" name="edit"></td>
       </tr>
     </tbody>
   </table>
@@ -62,15 +62,15 @@
             <input type="date" class="form-control" formControlName="date2" placeholder="yyyy-mm-dd" required autofocus >
             <button (click)="updateFee('date2')" class="savebtn">Save</button>
           </div>
-          <!-- <div>
+          <div>
             <label>Total Fees</label>
             <input type="number" class="form-control" formControlName="totalFee" placeholder="Eg 70000" required autofocus >
           </div>
           <div>
             <label>Balance Fees</label>
             <input type="number" class="form-control" formControlName="balanceFee" placeholder="Eg 10000" required autofocus >
-          </div> -->
-          <button class = "feeButton" type="submit" (click)="onUpdateClick()">Update Fee Details</button>
+          </div>
+          <!-- <button class = "feeButton" type="submit" (click)="onUpdateClick()">Update Fee Details</button> -->
           <span style="color: red;margin-left: 87px;" *ngIf="isUpdateFailed">Invalid Credential</span>
         </form>
       </div>
