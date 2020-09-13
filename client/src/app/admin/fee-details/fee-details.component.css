@@ -61,7 +61,7 @@ input {
     text-align: center;
 }
 
-button {
+.feeButton {
   background-color: #78c5db;
     width: 35%;
     margin: auto;

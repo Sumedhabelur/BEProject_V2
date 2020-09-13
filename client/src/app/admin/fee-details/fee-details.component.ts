@@ -13,6 +13,7 @@ export class FeeDetailsComponent implements OnInit {
   students = [];
   addFeeForm: FormGroup;
   isRegisterFailed = false;
+  isViewForm = false;
 
   constructor(
     private fb: FormBuilder,
@@ -26,6 +27,16 @@ export class FeeDetailsComponent implements OnInit {
   buildForm() {
     this.feeForm = this.fb.group({
       class: ['SE', Validators.required],
+    });
+
+    this.addFeeForm = this.fb.group({
+      userName: ['', Validators.required],
+      sem1: ['', Validators.required],
+      date1: ['', Validators.required],
+      sem2: ['', Validators.required],
+      date2: ['', Validators.required],
+      totalfees: ['', Validators.required],
+      balancefees: ['', Validators.required]
     });
   }
 
@@ -41,7 +52,14 @@ export class FeeDetailsComponent implements OnInit {
     console.log(this.students);
   }
 
+  addStudentFee(student) {
+    console.log(student._id);
+    this.isViewForm = true;
+    this.addFeeForm.get('userName').setValue(student.userName);
+  }
+
   onRegisterClick(){
+    console.log("In register Fee !!");
 
   }
 

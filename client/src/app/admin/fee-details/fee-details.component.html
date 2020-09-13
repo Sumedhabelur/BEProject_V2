@@ -20,7 +20,7 @@
         <th scope="col">#</th>
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
-        <th scope="col">User Name</th>
+        <th scope="col">Fee Details</th>
       </tr>
     </thead>
     <tbody *ngFor="let student of students;  let i = index">
@@ -28,13 +28,13 @@
         <th scope="row">{{i+1}}</th>
         <td>{{student.firstName}}</td>
         <td>{{student.lastName}}</td>
-        <td>{{student.userName}}</td>
+        <td><input type="button" value = "Add" (click) = "addStudentFee(student)" name="add"></td>
       </tr>
     </tbody>
   </table>
 </div>
-<div class = "feeform">
-    <div class="form-group">
+<div class = "feeform" *ngIf="isViewForm">
+    <div class="feeform-group">
       <div class="card-body">
         <h5 class="register">Fee Details Form</h5>
         <form [formGroup]="addFeeForm" class="form-register">
@@ -66,7 +66,7 @@
             <label>Balance Fees</label>
             <input type="number" class="form-control" formControlName="balancefees" placeholder="Eg 10000" required autofocus >
           </div>
-          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="onRegisterClick()">Add Fee Details</button>
+          <button class = "feeButton" type="submit" (click)="onRegisterClick()">Add Fee Details</button>
           <span style="color: red;margin-left: 87px;" *ngIf="isRegisterFailed">Invalid Credential</span>
         </form>
       </div>
