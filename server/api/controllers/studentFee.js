@@ -32,6 +32,19 @@ exports.registerFees = async (req, res, next) => {
 
 exports.updateFees = async (req, res, next) => {
 
+    const ObjForUpdate = {
+        payment1: { $set: { payment1: req.body.field } },
+        date1: { $set: { date1: req.body.field } },
+        payment2: { $set: { payment2: req.body.field } },
+        date2: { $set: { date2: req.body.field } }
+    }
+    try {
+        const result = await StudentFee.update({ _id: req.params.id }, ObjForUpdate[req.body.updateType]);
+        res.status(200).json({ result });
+    } catch (error) {
+        res.status(500).json(error)
+    }
+
 }
 
 exports.getAllFees = async (req, res, next) => {
