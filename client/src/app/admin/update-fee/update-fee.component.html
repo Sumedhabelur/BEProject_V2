@@ -1,1 +1,79 @@
-<p>update-fee works!</p>
+<div class = "studentlist">
+  <div class="form-group">
+    <div class="card-body">
+      <form [formGroup]="feeForm" class="form-studentlist">
+        <div class="form-group">
+          <label class="classLabel">Class</label>
+          <select (change)="onClassSelect()" formControlName="class" class="form-control">
+            <option>NONE</option>
+            <option>SE</option>
+            <option>TE</option>
+            <option>BE</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Fee Details</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let student of students;  let i = index">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td><input type="button" value = "Edit" (click) = "editStudentFee(student)" name="edit"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class = "feeform" *ngIf="isViewForm">
+    <div class="feeform-group">
+      <div class="card-body">
+        <h5 class="register">Edit Fee Details Form</h5>
+        <form [formGroup]="addFeeForm" class="form-register">
+          <div class="form-group">
+            <label>Student UserName</label>
+            <input type="text" class="form-control" formControlName="userName" placeholder="Enter User Name Here" required autofocus>
+          </div>
+          <div class="form-group">
+            <label>First Semester Payment</label>
+            <input type="number" class="form-control" formControlName="payment1" placeholder="50000" required autofocus>
+            <button (click)="updateFee('payment1')" class="savebtn">Save</button>
+          </div>
+          <div class="form-group">
+            <label>First Payment Date</label>
+            <input type="date" class="form-control" formControlName="date1" placeholder="yyyy-mm-dd" required autofocus >
+            <button (click)="updateFee('date1')" class="savebtn">Save</button>
+          </div>
+          <div class="form-group">
+            <label>Second Semester Payment</label>
+            <input type="number" class="form-control" formControlName="payment2" placeholder="Eg 30000" required autofocus >
+            <button (click)="updateFee('payment2')" class="savebtn">Save</button>
+          </div>
+          <div class="form-group">
+            <label>Second Payment Date</label>
+            <input type="date" class="form-control" formControlName="date2" placeholder="yyyy-mm-dd" required autofocus >
+            <button (click)="updateFee('date2')" class="savebtn">Save</button>
+          </div>
+          <!-- <div>
+            <label>Total Fees</label>
+            <input type="number" class="form-control" formControlName="totalFee" placeholder="Eg 70000" required autofocus >
+          </div>
+          <div>
+            <label>Balance Fees</label>
+            <input type="number" class="form-control" formControlName="balanceFee" placeholder="Eg 10000" required autofocus >
+          </div> -->
+          <button class = "feeButton" type="submit" (click)="onUpdateClick()">Update Fee Details</button>
+          <span style="color: red;margin-left: 87px;" *ngIf="isUpdateFailed">Invalid Credential</span>
+        </form>
+      </div>
+    </div>
+</div>
+
