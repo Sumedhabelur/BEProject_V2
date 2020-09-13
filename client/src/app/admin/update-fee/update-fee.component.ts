@@ -91,7 +91,7 @@ export class UpdateFeeComponent implements OnInit {
   updateFee(updateType) {
       this.adminService.updateFee(this.feeId, updateType, this.addFeeForm.get(updateType).value )
         .subscribe((res: any) => {
-          console.log(this.feeId.payment2);
+          console.log('Success!');
         });
     }
 }
