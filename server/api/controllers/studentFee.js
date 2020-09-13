@@ -35,7 +35,13 @@ exports.updateFees = async (req, res, next) => {
 }
 
 exports.getAllFees = async (req, res, next) => {
-
+    StudentFee.find().
+        then(result => {
+            res.status(200).json({ result });
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'Internal Server Error' })
+        })
 }
 
 exports.getFeesById = async (req, res, next) => {
