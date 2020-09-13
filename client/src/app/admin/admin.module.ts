@@ -16,6 +16,9 @@ import { SubjectAddComponent } from './subject-add/subject-add.component';
 import { NoticeComponent } from './notice/notice.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { FeeDetailsComponent } from './fee-details/fee-details.component';
+import { RegisterFeeComponent } from './register-fee/register-fee.component';
+import { UpdateFeeComponent } from './update-fee/update-fee.component';
+import { GetFeesComponent } from './get-fees/get-fees.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { FeeDetailsComponent } from './fee-details/fee-details.component';
     SubjectAddComponent,
     NoticeComponent,
     AttendanceComponent,
-    FeeDetailsComponent
+    FeeDetailsComponent,
+    RegisterFeeComponent,
+    UpdateFeeComponent,
+    GetFeesComponent
   ],
   imports: [
     CommonModule,
