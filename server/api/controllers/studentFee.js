@@ -65,6 +65,7 @@ exports.getFeesByClass = async (req, res, next) => {
         .catch(err => {
             res.status(500).json({ message: 'Internal Server Error' })
         })
+        console.log(result);
 }
 
 exports.getFeeById = async (req, res, next) => {
