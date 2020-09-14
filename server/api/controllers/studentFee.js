@@ -4,7 +4,7 @@ const StudentFee = require("../models/studentFee");
 exports.registerFees = async (req, res, next) => {
 
     console.log(req.body.studentId);
-    const balanceFee = 70000 - req.body.payment1 - ( req.body.payment2?req.body.payment2:0);
+    const balanceFee = 70000 - req.body.payment1 - (req.body.payment2 ? req.body.payment2 : 0);
     const studentFee = new StudentFee({
         studentId: req.body.studentId,
         class: req.body.class,
@@ -32,11 +32,14 @@ exports.registerFees = async (req, res, next) => {
 
 exports.updateFees = async (req, res, next) => {
 
+    const fee = await StudentFee.findOne({ _id: req.params.id });
+
     const ObjForUpdate = {
-        payment1: { $set: { payment1: req.body.field } },
+        payment1: { $set: { payment1: req.body.field, balanceFee: fee.balanceFee - req.body.field } },
         date1: { $set: { date1: req.body.field } },
-        payment2: { $set: { payment2: req.body.field } },
-        date2: { $set: { date2: req.body.field } }
+        payment2: { $set: { payment2: req.body.field, balanceFee: fee.balanceFee - req.body.field} },
+        date2: { $set: { date2: req.body.field } },
+        
     }
     try {
         const result = await StudentFee.update({ _id: req.params.id }, ObjForUpdate[req.body.updateType]);
@@ -58,18 +61,17 @@ exports.getAllFees = async (req, res, next) => {
 }
 
 exports.getFeesByClass = async (req, res, next) => {
-    StudentFee.find({class: req.params.class }).populate("studentId")
+    StudentFee.find({ class: req.params.class }).populate("studentId")
         .then(result => {
             res.status(200).json({ result });
         })
         .catch(err => {
             res.status(500).json({ message: 'Internal Server Error' })
         })
-        console.log(result);
 }
 
 exports.getFeeById = async (req, res, next) => {
-    StudentFee.findById(req.params.id )
+    StudentFee.findById(req.params.id)
         .then(result => {
             res.status(200).json({ result });
         })

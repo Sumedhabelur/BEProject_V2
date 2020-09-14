@@ -53,12 +53,11 @@ export class UpdateFeeComponent implements OnInit {
   }
 
   editStudentFee(fee) {
-    console.log(fee._id);
     this.feeId = fee._id;
     this.isViewForm = true;
     this.addFeeForm.get('userName').setValue(fee.studentId.userName);
     this.addFeeForm.get('payment1').setValue(fee.payment1);
-    this.addFeeForm.get('date1').setValue(fee.date1);
+    this.addFeeForm.get('date1').setValue(new Date(fee.date1).toDateString());
     this.addFeeForm.get('payment2').setValue(fee.payment2);
     this.addFeeForm.get('date2').setValue(fee.date2);
     this.addFeeForm.get('totalFee').setValue(fee.totalFee);
