@@ -59,33 +59,13 @@ export class UpdateFeeComponent implements OnInit {
     this.addFeeForm.get('payment1').setValue(fee.payment1);
     this.addFeeForm.get('date1').setValue(new Date(fee.date1).toDateString());
     this.addFeeForm.get('payment2').setValue(fee.payment2);
-    this.addFeeForm.get('date2').setValue(fee.date2);
-    this.addFeeForm.get('totalFee').setValue(fee.totalFee);
-    this.addFeeForm.get('balanceFee').setValue(fee.balanceFee);
+    this.addFeeForm.get('date2').setValue(new Date(fee.date2).toDateString());
   }
 
-  // onUpdateClick() {
-  //   console.log('In update Fee !!');
-  //   const data = {
-  //     feeId: this.feeId,
-  //     class: this.feeForm.get('class').value,
-  //     payment1: this.addFeeForm.get('payment1').value,
-  //     date1: this.addFeeForm.get('date1').value,
-  //     payment2: this.addFeeForm.get('payment2').value,
-  //     date2: this.addFeeForm.get('date2').value,
-  //     totalFee: this.addFeeForm.get('totalFee').value,
-  //     balanceFee: this.addFeeForm.get('balanceFee').value,
-  //   };
-  //   this.adminService.registerFees(data).subscribe((response: any) => {
-  //     console.log(response);
-  //     if (response) {
-  //       console.log('Successful');
-  //     } else {
-  //       this.isUpdateFailed = true;
-  //     }
-
-  //   });
-  // }
+  getBalanceFee(){
+    console.log(this.feeId.balanceFee);
+    this.addFeeForm.get('balanceFee').setValue(this.feeId.balanceFee);
+  }
 
   updateFee(updateType) {
       this.adminService.updateFee(this.feeId, updateType, this.addFeeForm.get(updateType).value )

@@ -40,35 +40,32 @@
         <form [formGroup]="addFeeForm" class="form-register">
           <div class="form-group">
             <label>Student UserName</label>
-            <input type="text" class="form-control" formControlName="userName" placeholder="Enter User Name Here" required autofocus>
+            <input type="text" class="form-control" formControlName="userName" required autofocus>
           </div>
           <div class="form-group">
             <label>First Semester Payment</label>
-            <input type="number" class="form-control" formControlName="payment1" placeholder="50000" required autofocus>
+            <input type="number" class="form-control" formControlName="payment1" required autofocus>
             <button (click)="updateFee('payment1')" class="savebtn">Save</button>
           </div>
           <div class="form-group">
             <label>First Payment Date</label>
-            <input type="text" class="form-control" formControlName="date1" placeholder="yyyy-mm-dd" required autofocus >
+            <input type="text" class="form-control" formControlName="date1" required autofocus >
             <button (click)="updateFee('date1')" class="savebtn">Save</button>
           </div>
           <div class="form-group">
             <label>Second Semester Payment</label>
-            <input type="number" class="form-control" formControlName="payment2" placeholder="Eg 30000" required autofocus >
+            <input type="number" class="form-control" formControlName="payment2" required autofocus >
             <button (click)="updateFee('payment2')" class="savebtn">Save</button>
           </div>
           <div class="form-group">
             <label>Second Payment Date</label>
-            <input type="date" class="form-control" formControlName="date2" placeholder="yyyy-mm-dd" required autofocus >
+            <input type="text" class="form-control" formControlName="date2" required autofocus >
             <button (click)="updateFee('date2')" class="savebtn">Save</button>
           </div>
-          <div>
-            <label>Total Fees</label>
-            <input type="number" class="form-control" formControlName="totalFee" placeholder="Eg 70000" required autofocus >
-          </div>
+          <button class = "feeButton" type="submit" (click)="getBalanceFee()">Get Balance Fees</button>
           <div>
             <label>Balance Fees</label>
-            <input type="number" class="form-control" formControlName="balanceFee" placeholder="Eg 10000" required autofocus >
+            <input type="number" class="form-control" formControlName="balanceFee" required autofocus > 
           </div>
           <!-- <button class = "feeButton" type="submit" (click)="onUpdateClick()">Update Fee Details</button> -->
           <span style="color: red;margin-left: 87px;" *ngIf="isUpdateFailed">Invalid Credential</span>

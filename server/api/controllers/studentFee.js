@@ -33,7 +33,11 @@ exports.registerFees = async (req, res, next) => {
 exports.updateFees = async (req, res, next) => {
 
     const fee = await StudentFee.findOne({ _id: req.params.id });
-
+    if((fee.balanceFee - req.body.field) < 0 ){
+        return res.status(500).json('Invalid Operation')
+    }
+    console.log(fee)
+    console.log(req.body)
     const ObjForUpdate = {
         payment1: { $set: { payment1: req.body.field, balanceFee: fee.balanceFee - req.body.field } },
         date1: { $set: { date1: req.body.field } },
