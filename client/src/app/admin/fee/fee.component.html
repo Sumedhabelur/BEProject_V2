@@ -1,0 +1,11 @@
+<div class="row1">
+    <button [routerLink]="['add']" class="btn btn-primary" type="button">Add Student Fees</button>
+    <button [routerLink]="['update']" class="btn btn-primary" type="button">Update Student Fees</button>
+    <button [routerLink]="['view']" class="btn btn-primary" type="button">View Student Fees</button>
+</div>
+<div class="row2">
+    <!-- <app-get-fees *ngIf="type == 'view'"></app-get-fees> -->
+    <!-- <app-register-fee *ngIf="type == 'add'"></app-register-fee> -->
+    <!-- <app-update-fee *ngIf="type == 'update'"></app-update-fee> -->
+    <router-outlet></router-outlet>
+</div>

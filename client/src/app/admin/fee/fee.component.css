@@ -1,0 +1,23 @@
+.row1 {
+    width: 50%;
+      height: 45px;
+      margin: auto;
+      margin-top: 10px;
+  }
+  
+  .row2 {
+    width: 95%;
+    margin: auto;
+  }
+  
+  button {
+    font-size: 22px;
+      font-family: fangsong;
+      border-radius: 20px;
+      margin-left: 30px;
+      margin-right: 30px;
+      background-color: #78c5db;
+      border-color: antiquewhite;
+      color: #05394c;
+  }
+  

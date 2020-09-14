@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { AdminService } from '../service/admin.service';
+import { AdminService } from '../../service/admin.service';
 
 @Component({
   selector: 'app-register-fee',
@@ -19,7 +19,7 @@ export class RegisterFeeComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private adminService: AdminService
-) { }
+  ) { }
 
   ngOnInit() {
     this.buildForm();
@@ -39,6 +39,7 @@ export class RegisterFeeComponent implements OnInit {
       totalFee: ['', Validators.required],
       balanceFee: ['', Validators.required]
     });
+    this.onClassSelect();
   }
 
   onClassSelect() {

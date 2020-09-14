@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from '../service/admin.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdminService } from '../../service/admin.service';
 
 @Component({
   selector: 'app-get-fees',
@@ -19,11 +19,12 @@ export class GetFeesComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+    this.onClassSelect();
   }
 
   buildForm() {
     this.listForm = this.fb.group({
-      class: ['None', Validators.required]
+      class: ['SE', Validators.required]
     });
   }
 

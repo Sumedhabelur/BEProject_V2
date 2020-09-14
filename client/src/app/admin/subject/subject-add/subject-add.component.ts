@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProfessorService } from '../service/professor.service';
-import { SubjectService } from '../service/subject.service';
+import { ProfessorService } from '../../service/professor.service';
+import { SubjectService } from '../../service/subject.service';
 
 @Component({
   selector: 'app-subject-add',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AdminService } from '../service/admin.service';
+import { AdminService } from '../../service/admin.service';
 
 @Component({
   selector: 'app-update-fee',
@@ -23,6 +23,7 @@ export class UpdateFeeComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+    this.onClassSelect();
   }
   buildForm() {
     this.feeForm = this.fb.group({

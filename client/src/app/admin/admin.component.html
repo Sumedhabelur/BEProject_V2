@@ -45,19 +45,19 @@
   <button [routerLink]="['notice']" type="button" class="nav-button">Notices</button>
   <button [routerLink]="['takeattendance']" type="button" class="nav-button">Take Attendance</button>
   <button [routerLink]="['viewattendance']" type="button" class="nav-button">View Attendance</button> -->
-  <button (click)="selectAuthType('Student')" type="button" class="nav-button">Student</button>
-  <button (click)="selectAuthType('Professor')" type="button" class="nav-button">Professor</button>
-  <button (click)="selectAuthType('Subject')" type="button" class="nav-button">Subject</button>
-  <button (click)="selectAuthType('Notice')" type="button" class="nav-button">Notice</button>
-  <button (click)="selectAuthType('Attendance')" type="button" class="nav-button">Attendance</button>
-  <button (click)="selectAuthType('FeeDetails')" type="button" class="nav-button">Fee Details</button>
+  <button [routerLink]="['student']" type="button" class="nav-button">Student</button>
+  <button [routerLink]="['professor']" type="button" class="nav-button">Professor</button>
+  <button [routerLink]="['subject']" type="button" class="nav-button">Subject</button>
+  <button [routerLink]="['/admin/dashboard/notes']" type="button" class="nav-button">Notice</button>
+  <button [routerLink]="['/admin/dashboard/attendance']" type="button" class="nav-button">Attendance</button>
+  <button [routerLink]="['fee']" type="button" class="nav-button">Fee Details</button>
   <button type="button" (click)="logout()" class="nav-button" style="background-color: #ff5722">Logout</button>
 </div>
 <hr class="line1">
-<app-student *ngIf="selectedType == 'Student'"></app-student>
-<app-professor *ngIf="selectedType == 'Professor'"></app-professor>
-<app-subject *ngIf="selectedType == 'Subject'"></app-subject>
-<app-notice *ngIf="selectedType == 'Notice'"></app-notice>
-<app-attendance *ngIf="selectedType == 'Attendance'"></app-attendance>
-<app-fee-details *ngIf="selectedType == 'FeeDetails'"></app-fee-details>
+<!-- <app-student *ngIf="selectedType == 'Student'"></app-student> -->
+<!-- <app-professor *ngIf="selectedType == 'Professor'"></app-professor> -->
+<!-- <app-subject *ngIf="selectedType == 'Subject'"></app-subject> -->
+<!-- <app-notice *ngIf="selectedType == 'Notice'"></app-notice> -->
+<!-- <app-attendance *ngIf="selectedType == 'Attendance'"></app-attendance> -->
+<!-- <app-fee-details *ngIf="selectedType == 'FeeDetails'"></app-fee-details> -->
 <router-outlet></router-outlet>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StudentService } from '../service/student.service';
+import { StudentService } from '../../service/student.service';
 
 @Component({
   selector: 'app-student-registration-form',
