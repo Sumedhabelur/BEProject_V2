@@ -61,17 +61,29 @@ export class UpdateFeeComponent implements OnInit {
     this.addFeeForm.get('date1').setValue(new Date(fee.date1).toDateString());
     this.addFeeForm.get('payment2').setValue(fee.payment2);
     this.addFeeForm.get('date2').setValue(new Date(fee.date2).toDateString());
+    this.addFeeForm.get('balanceFee').setValue(70000 - fee.payment1 - fee.payment2)
   }
 
-  getBalanceFee(){
+  getBalanceFee() {
     console.log(this.feeId.balanceFee);
     this.addFeeForm.get('balanceFee').setValue(this.feeId.balanceFee);
   }
 
+  setBalanceFee() {
+    this.addFeeForm.get('balanceFee').setValue(70000 - this.addFeeForm.value.payment1 - this.addFeeForm.value.payment2)
+  }
+
   updateFee(updateType) {
-      this.adminService.updateFee(this.feeId, updateType, this.addFeeForm.get(updateType).value )
-        .subscribe((res: any) => {
-          console.log('Success!');
-        });
-    }
+    this.adminService.updateFee(this.feeId, updateType, this.addFeeForm.get(updateType).value)
+      .subscribe((res: any) => {
+        console.log('Success!');
+      });
+  }
+
+  onUpdateClick() {
+    this.adminService.updateFee2(this.feeId, this.addFeeForm.value)
+      .subscribe((res: any) => {
+        console.log('Success!');
+      });
+  }
 }

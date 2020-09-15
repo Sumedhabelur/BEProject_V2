@@ -35,6 +35,10 @@ export class AdminService {
     });
   }
 
+  updateFee2(feeId, body) {
+    return this.http.put(`http://localhost:3000/studentFee/update/${feeId}`, body);
+  }
+
   getFeeById(feeId) {
     return this.http.get(`http://localhost:3000/studentFee/${feeId}`);
   }
