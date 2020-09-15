@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AdminService } from '../../service/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-fee',
@@ -83,7 +84,7 @@ export class UpdateFeeComponent implements OnInit {
   onUpdateClick() {
     this.adminService.updateFee2(this.feeId, this.addFeeForm.value)
       .subscribe((res: any) => {
-        console.log('Success!');
+        Swal.fire('fghjklfcjf');
       });
   }
 }
