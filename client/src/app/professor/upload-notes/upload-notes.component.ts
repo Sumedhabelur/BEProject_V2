@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessorService } from '../service/professor.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-upload-notes',
@@ -54,12 +55,11 @@ export class UploadNotesComponent implements OnInit {
     this.file = event.target.files[0];
   }
 
-
-
   uploadNote() {
     this.getNoteData();
     this.professorService.uploadNote(this.formData).subscribe((response) => {
       this.file = null;
+      Swal.fire('Successfully Uploaded :)');
       this.noteForm.reset();
       this.getNotes();
     });

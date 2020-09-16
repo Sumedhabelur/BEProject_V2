@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessorService } from '../service/professor.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-upload-notice',
@@ -50,6 +51,7 @@ export class UploadNoticeComponent implements OnInit {
     formData.append('class', this.noticeForm.get('class').value);
 
     this.professorService.uploadNotice(formData).subscribe((response) => {
+      Swal.fire('Successfully Uploaded :)');
       this.getNotice();
     });
   }

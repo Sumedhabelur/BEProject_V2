@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StudentAttendanceService } from '../service/student-attendance.service';
 import * as _ from 'lodash';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-take-attendance',
@@ -39,7 +40,7 @@ export class TakeAttendanceComponent implements OnInit {
   getSubjects() {
     this.studentAttendanceService.getAllSubjects().subscribe((res: any) => {
       this.subjects = res.result;
-      console.log('this.subjects', this.subjects)
+      console.log('this.subjects', this.subjects);
     });
   }
 
@@ -68,9 +69,10 @@ export class TakeAttendanceComponent implements OnInit {
       date: new Date()
     };
     this.studentAttendanceService.registerLecture(data).subscribe((response: any) => {
-      console.log('Successful..!!')
+      console.log('Successful..!!');
+      Swal.fire('Successfully Added :)');
     }, (error) => {
-      console.log('error', error)
+      console.log('error', error);
     });
   }
 

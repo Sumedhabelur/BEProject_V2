@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProfessorService } from '../service/professor.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-profile',
@@ -44,6 +45,7 @@ export class UpdateProfileComponent implements OnInit {
   updateProf(updateType) {
     this.professorService.updateProfByField(this.professorService.professorId, updateType, this.detailForm.get(updateType).value )
       .subscribe((res: any) => {
+        Swal.fire('Successfully Updated :)');
         this.getProfessorById(this.professorService.professorId);
       });
   }
