@@ -77,3 +77,10 @@ h5 {
     color: #05394c;
     margin-top: 45px;
 }
+
+button {
+  width: 50%;
+    height: 45px;
+    margin: auto;
+    background: #343a40;
+}
