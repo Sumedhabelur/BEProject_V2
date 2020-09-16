@@ -59,10 +59,10 @@ export class UpdateFeeComponent implements OnInit {
     this.isViewForm = true;
     this.addFeeForm.get('userName').setValue(fee.studentId.userName);
     this.addFeeForm.get('payment1').setValue(fee.payment1);
-    this.addFeeForm.get('date1').setValue(new Date(fee.date1).toDateString());
+    this.addFeeForm.get('date1').setValue(new Date(fee.date1).toISOString().substring(0, 10));
     this.addFeeForm.get('payment2').setValue(fee.payment2);
-    this.addFeeForm.get('date2').setValue(new Date(fee.date2).toDateString());
-    this.addFeeForm.get('balanceFee').setValue(70000 - fee.payment1 - fee.payment2)
+    this.addFeeForm.get('date2').setValue(new Date(fee.date2).toISOString().substring(0, 10));
+    this.addFeeForm.get('balanceFee').setValue(70000 - fee.payment1 - fee.payment2);
   }
 
   getBalanceFee() {
@@ -84,7 +84,7 @@ export class UpdateFeeComponent implements OnInit {
   onUpdateClick() {
     this.adminService.updateFee2(this.feeId, this.addFeeForm.value)
       .subscribe((res: any) => {
-        Swal.fire('fghjklfcjf');
+        Swal.fire('Successfully Updated :)');
       });
   }
 }
