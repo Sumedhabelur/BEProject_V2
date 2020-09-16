@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AdminService } from '../../service/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-fee',
@@ -74,7 +75,7 @@ export class RegisterFeeComponent implements OnInit {
     this.adminService.registerFees(data).subscribe((response: any) => {
       console.log(response);
       if (response) {
-        console.log('Successful');
+        Swal.fire('Successfully Added :)');
       } else {
         this.isRegisterFailed = true;
       }

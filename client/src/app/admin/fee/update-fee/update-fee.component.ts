@@ -54,9 +54,9 @@ export class UpdateFeeComponent implements OnInit {
     console.log(this.fees);
   }
 
-  editStudentFee(fee) {
+  toggleEditStudentFee(fee) {
     this.feeId = fee._id;
-    this.isViewForm = true;
+    this.isViewForm = !this.isViewForm;
     this.addFeeForm.get('userName').setValue(fee.studentId.userName);
     this.addFeeForm.get('payment1').setValue(fee.payment1);
     this.addFeeForm.get('date1').setValue(new Date(fee.date1).toISOString().substring(0, 10));

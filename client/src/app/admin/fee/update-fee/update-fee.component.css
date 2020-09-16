@@ -87,3 +87,10 @@ h5 {
     background-color: #78c5db;
     border-radius: 8px;
 }
+
+button {
+  width: 50%;
+    height: 45px;
+    margin: auto;
+    background: #343a40;
+}

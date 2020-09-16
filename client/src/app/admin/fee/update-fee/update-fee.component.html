@@ -28,7 +28,7 @@
         <th scope="row">{{i+1}}</th>
         <td>{{fee.studentId.firstName}}</td>
         <td>{{fee.studentId.lastName}}</td>
-        <td><input type="button" value = "Edit" (click) = "editStudentFee(fee)" name="edit"></td>
+        <td><button (click) = "toggleEditStudentFee(fee)" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{isViewForm?'Close':'Edit'}}</button></td>
       </tr>
     </tbody>
   </table>

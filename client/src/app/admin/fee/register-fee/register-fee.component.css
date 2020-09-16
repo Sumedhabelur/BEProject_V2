@@ -6,7 +6,7 @@
   width: 50%;
   float: right;
   position: absolute;
-  top: 264px;
+  top: 310px;
   right: 0px;
 }
 
@@ -79,7 +79,7 @@ h5 {
 }
 
 button {
-  width: 50%;
+  width: 65%;
     height: 45px;
     margin: auto;
     background: #343a40;
