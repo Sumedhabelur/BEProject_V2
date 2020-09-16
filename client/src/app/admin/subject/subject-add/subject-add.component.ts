@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProfessorService } from '../../service/professor.service';
 import { SubjectService } from '../../service/subject.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-subject-add',
@@ -39,7 +40,7 @@ export class SubjectAddComponent implements OnInit {
 
   addSubject() {
     this.subjectService.addSubject(this.subjectForm.value).subscribe((res: any) => {
-
+      Swal.fire('Successfully Added :)');
     });
   }
 }
