@@ -4,12 +4,13 @@
       margin: auto;
       margin-top: 10px;
   }
-  
+
   .row2 {
     width: 95%;
     margin: auto;
+    margin-top: 30px;
   }
-  
+
   button {
     font-size: 22px;
       font-family: fangsong;
@@ -20,4 +21,3 @@
       border-color: antiquewhite;
       color: #05394c;
   }
-  
