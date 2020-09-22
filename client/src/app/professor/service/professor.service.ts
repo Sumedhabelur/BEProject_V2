@@ -48,4 +48,8 @@ export class ProfessorService {
   getAllSubjects() {
     return this.http.get('http://localhost:3000/subject/');
   }
+
+  getFeesByClass(data) {
+    return this.http.get(`http://localhost:3000/studentFee/class/${data}`);
+  }
 }
