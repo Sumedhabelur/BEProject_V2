@@ -38,7 +38,7 @@ export class StudentEditComponent implements OnInit {
       this.detailForm.get('firstName').setValue(this.student.firstName);
       this.detailForm.get('lastName').setValue(this.student.lastName);
       this.detailForm.get('email').setValue(this.student.email);
-      this.detailForm.get('dob').setValue(this.student.dob);
+      this.detailForm.get('dob').setValue(this.student.dob.substring(0, 10));
       this.detailForm.get('password').setValue(this.student.pass);
     });
   }

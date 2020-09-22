@@ -37,7 +37,7 @@ export class UpdateProfileComponent implements OnInit {
       this.detailForm.get('firstName').setValue(this.professor.firstName);
       this.detailForm.get('lastName').setValue(this.professor.lastName);
       this.detailForm.get('email').setValue(this.professor.email);
-      this.detailForm.get('dob').setValue(this.professor.dob);
+      this.detailForm.get('dob').setValue(this.professor.dob.substring(0, 10));
       this.detailForm.get('password').setValue(this.professor.pass);
     });
   }
