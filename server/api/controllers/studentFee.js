@@ -62,7 +62,7 @@ exports.getFeesByClass = async (req, res, next) => {
 }
 
 exports.getFeeById = async (req, res, next) => {
-    StudentFee.findById(req.params.id)
+    StudentFee.find({ studentId: req.params.studentId }).populate("studentId")
         .then(result => {
             res.status(200).json({ result });
         })

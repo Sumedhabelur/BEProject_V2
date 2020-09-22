@@ -1,1 +1,70 @@
-<p>fee-details works!</p>
+<div class="background" style="background-color: aqua;">
+  <!-- <table class="">
+    <tr>
+      <th>Student Name : </th>
+      <td>{{student.studentId.firstName}} {{student.studentId.lastName}}</td>
+    </tr>
+    <tr>
+      <th>Class : </th>
+      <td>{{student.class}}</td>
+    </tr>
+    <tr>
+      <th>Student Username : </th>
+      <td>{{student.studentId.userName}}</td>
+    </tr>
+    <tr>
+      <th>First Semester Payment : </th>
+      <td>{{student.payment1}}</td>
+      <th>Date : </th>
+      <td>{{student.date1}}</td>
+    </tr>
+    <tr>
+      <th>Second Semester Payment : </th>
+      <td>{{student.payment2}}</td>
+      <th>Date : </th>
+      <td>{{student.date2}}</td>
+    </tr>
+    <tr>
+      <th>Total Fees : </th>
+      <td>{{student.totalFee}}</td>
+    </tr>
+    <tr>
+      <th>Balance Fees : </th>
+      <td>{{student.balanceFee}}</td>
+    </tr>
+  </table> -->
+  <table class="table">
+      <tr>
+        <th scope="col">Student Name : </th>
+        <td colspan="3">{{student.studentId.firstName}} {{student.studentId.lastName}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Student Username : </th>
+        <td colspan="3">{{student.studentId.userName}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Class : </th>
+        <td colspan="3">{{student.class}}</td>
+      </tr>
+      <tr>
+        <th scope="col">First Semester Payment : </th>
+        <td>{{student.payment1}}</td>
+        <th scope="col">Date : </th>
+        <td>{{student.date1 | date:'MM/dd/yyyy'}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Second Semester Payment : </th>
+        <td>{{student.payment2}}</td>
+        <th scope="col">Date : </th>
+        <td>{{student.date2 | date:'MM/dd/yyyy'}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Total Fees : </th>
+        <td colspan="3">{{student.totalFee}}</td>
+      </tr>
+      <tr>
+        <th scope="col">Balance Fees : </th>
+        <td colspan="3">{{student.balanceFee}}</td>
+      </tr>
+  </table>
+</div>

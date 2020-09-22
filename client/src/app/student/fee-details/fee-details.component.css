@@ -1,0 +1,15 @@
+.background {
+  background-color: aqua;
+    width: 45%;
+    margin: auto;
+    text-align: center;
+    font-size: 22px;
+    font-style: oblique;
+    height: 400px;
+}
+
+h4 {
+  width: 60%;
+    float: right;
+    background-color: bisque;
+}
