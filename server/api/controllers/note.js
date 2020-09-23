@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Note = require("../models/note");
 
 exports.getNotes = async (req, res, next) => {
-    const result = await Note.find();
+    const result = await Note.find().populate("subject");
 
     res.status(200).json({
         result: result

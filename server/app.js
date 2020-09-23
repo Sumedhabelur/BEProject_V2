@@ -17,8 +17,9 @@ const mongoose = require("mongoose");
 
 
  // need to change
+ //'mongodb+srv://node-shop:node-shop@node-shop-rest-slxeu.mongodb.net/test?retryWrites=true&w=majority'
 
-mongoose.connect('mongodb+srv://node-shop:node-shop@node-shop-rest-slxeu.mongodb.net/test?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://Keystone:Keystone@123@keystone.ocwng.mongodb.net/College?retryWrites=true&w=majority',
     { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
